@@ -16,9 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        self.window=UIWindow()
         
+        //实例化子类方法作为rootVC使用
+        let mainvc = DZCMainViewController()
         
-        
+        self.window?.rootViewController=mainvc.tabbarsubsvc()
+        self.window?.backgroundColor=UIColor.orange
+        self.window?.makeKeyAndVisible()
         
         return true
     }
@@ -44,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+  
 }
 

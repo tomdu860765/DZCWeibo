@@ -10,6 +10,15 @@
 		226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F680C215BC12D00F26441 /* AppDelegate.swift */; };
 		226F6814215BC13100F26441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F6813215BC13100F26441 /* Assets.xcassets */; };
 		226F6817215BC13100F26441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F6815215BC13100F26441 /* LaunchScreen.storyboard */; };
+		226F6829215BC77100F26441 /* DZCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6828215BC77100F26441 /* DZCMainViewController.swift */; };
+		226F682B215BC7C200F26441 /* DZCTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F682A215BC7C200F26441 /* DZCTabBarViewController.swift */; };
+		226F682D215BC7F500F26441 /* DZCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F682C215BC7F500F26441 /* DZCNavigationController.swift */; };
+		226F682F215BC80900F26441 /* DZCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F682E215BC80900F26441 /* DZCBaseViewController.swift */; };
+		226F6831215BC86E00F26441 /* DZCDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6830215BC86E00F26441 /* DZCDiscoverController.swift */; };
+		226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6832215BC88000F26441 /* DZCHomeViewController.swift */; };
+		226F6835215BC89500F26441 /* DZCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6834215BC89500F26441 /* DZCMessageViewController.swift */; };
+		226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */; };
+		22921EF7215BF09900B947EB /* UIImage+ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22921EF6215BF09900B947EB /* UIImage+ImageName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +27,15 @@
 		226F6813215BC13100F26441 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		226F6816215BC13100F26441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226F6818215BC13100F26441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		226F6828215BC77100F26441 /* DZCMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMainViewController.swift; sourceTree = "<group>"; };
+		226F682A215BC7C200F26441 /* DZCTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCTabBarViewController.swift; sourceTree = "<group>"; };
+		226F682C215BC7F500F26441 /* DZCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCNavigationController.swift; sourceTree = "<group>"; };
+		226F682E215BC80900F26441 /* DZCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCBaseViewController.swift; sourceTree = "<group>"; };
+		226F6830215BC86E00F26441 /* DZCDiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCDiscoverController.swift; sourceTree = "<group>"; };
+		226F6832215BC88000F26441 /* DZCHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCHomeViewController.swift; sourceTree = "<group>"; };
+		226F6834215BC89500F26441 /* DZCMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMessageViewController.swift; sourceTree = "<group>"; };
+		226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMyinfoViewController.swift; sourceTree = "<group>"; };
+		22921EF6215BF09900B947EB /* UIImage+ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,12 +69,109 @@
 		226F680B215BC12D00F26441 /* DZCWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				226F681E215BC69D00F26441 /* Classes */,
 				226F680C215BC12D00F26441 /* AppDelegate.swift */,
 				226F6813215BC13100F26441 /* Assets.xcassets */,
 				226F6815215BC13100F26441 /* LaunchScreen.storyboard */,
 				226F6818215BC13100F26441 /* Info.plist */,
 			);
 			path = DZCWeibo;
+			sourceTree = "<group>";
+		};
+		226F681E215BC69D00F26441 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				226F681F215BC69D00F26441 /* Model */,
+				226F6820215BC69D00F26441 /* Tools */,
+				226F6821215BC69D00F26441 /* View */,
+				226F6827215BC69D00F26441 /* ViewModel */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		226F681F215BC69D00F26441 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		226F6820215BC69D00F26441 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				22921EF5215BF06800B947EB /* Extension */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		226F6821215BC69D00F26441 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				226F6824215BC69D00F26441 /* Main */,
+				226F6822215BC69D00F26441 /* Discover */,
+				226F6823215BC69D00F26441 /* Home */,
+				226F6825215BC69D00F26441 /* Message */,
+				226F6826215BC69D00F26441 /* Myinfo */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		226F6822215BC69D00F26441 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				226F6830215BC86E00F26441 /* DZCDiscoverController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		226F6823215BC69D00F26441 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				226F6832215BC88000F26441 /* DZCHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		226F6824215BC69D00F26441 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				226F6828215BC77100F26441 /* DZCMainViewController.swift */,
+				226F682A215BC7C200F26441 /* DZCTabBarViewController.swift */,
+				226F682C215BC7F500F26441 /* DZCNavigationController.swift */,
+				226F682E215BC80900F26441 /* DZCBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		226F6825215BC69D00F26441 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				226F6834215BC89500F26441 /* DZCMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		226F6826215BC69D00F26441 /* Myinfo */ = {
+			isa = PBXGroup;
+			children = (
+				226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */,
+			);
+			path = Myinfo;
+			sourceTree = "<group>";
+		};
+		226F6827215BC69D00F26441 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22921EF5215BF06800B947EB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				22921EF6215BF09900B947EB /* UIImage+ImageName.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +245,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */,
 				226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */,
+				22921EF7215BF09900B947EB /* UIImage+ImageName.swift in Sources */,
+				226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */,
+				226F682F215BC80900F26441 /* DZCBaseViewController.swift in Sources */,
+				226F6831215BC86E00F26441 /* DZCDiscoverController.swift in Sources */,
+				226F682D215BC7F500F26441 /* DZCNavigationController.swift in Sources */,
+				226F682B215BC7C200F26441 /* DZCTabBarViewController.swift in Sources */,
+				226F6835215BC89500F26441 /* DZCMessageViewController.swift in Sources */,
+				226F6829215BC77100F26441 /* DZCMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U62LQ53T;
 				INFOPLIST_FILE = DZCWeibo/Info.plist;
@@ -287,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U62LQ53T;
 				INFOPLIST_FILE = DZCWeibo/Info.plist;
