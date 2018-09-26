@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F680C215BC12D00F26441 /* AppDelegate.swift */; };
-		226F680F215BC12D00F26441 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F680E215BC12D00F26441 /* ViewController.swift */; };
-		226F6812215BC12D00F26441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F6810215BC12D00F26441 /* Main.storyboard */; };
 		226F6814215BC13100F26441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F6813215BC13100F26441 /* Assets.xcassets */; };
 		226F6817215BC13100F26441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F6815215BC13100F26441 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -17,8 +15,6 @@
 /* Begin PBXFileReference section */
 		226F6809215BC12D00F26441 /* DZCWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZCWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F680C215BC12D00F26441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		226F680E215BC12D00F26441 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		226F6811215BC12D00F26441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		226F6813215BC13100F26441 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		226F6816215BC13100F26441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226F6818215BC13100F26441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +38,7 @@
 				226F680A215BC12D00F26441 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		226F680A215BC12D00F26441 /* Products */ = {
 			isa = PBXGroup;
@@ -55,8 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				226F680C215BC12D00F26441 /* AppDelegate.swift */,
-				226F680E215BC12D00F26441 /* ViewController.swift */,
-				226F6810215BC12D00F26441 /* Main.storyboard */,
 				226F6813215BC13100F26441 /* Assets.xcassets */,
 				226F6815215BC13100F26441 /* LaunchScreen.storyboard */,
 				226F6818215BC13100F26441 /* Info.plist */,
@@ -90,6 +85,7 @@
 		226F6801215BC12D00F26441 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DZC;
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = tomdu;
@@ -124,7 +120,6 @@
 			files = (
 				226F6817215BC13100F26441 /* LaunchScreen.storyboard in Resources */,
 				226F6814215BC13100F26441 /* Assets.xcassets in Resources */,
-				226F6812215BC12D00F26441 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +130,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226F680F215BC12D00F26441 /* ViewController.swift in Sources */,
 				226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +137,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		226F6810215BC12D00F26441 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				226F6811215BC12D00F26441 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		226F6815215BC13100F26441 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,6 +271,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U62LQ53T;
 				INFOPLIST_FILE = DZCWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +279,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomdu.hiworld.DZCWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +290,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U62LQ53T;
 				INFOPLIST_FILE = DZCWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomdu.hiworld.DZCWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
