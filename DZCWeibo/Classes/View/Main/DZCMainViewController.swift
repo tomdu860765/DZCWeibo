@@ -8,25 +8,49 @@
 
 import UIKit
 
-class DZCMainViewController: UIViewController {
+class DZCMainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-      
+        tabbarsubsvc()
+        setbutton()
+    }
+    @objc private func showvc(){
+        
+        print("我被点击了")
+    }
+    private lazy var button:UIButton = {
+        let btn=UIButton()
+        btn.setBackgroundImage(UIImage.init(named:"tabbar_compose_button"), for:.normal)
+        btn.setBackgroundImage(UIImage.init(named:"tabbar_compose_button_highlighted"), for:.selected)
+        btn.setImage(UIImage.init(named: "tabbar_compose_icon_add"), for: .normal)
+        btn.setImage(UIImage.init(named: "tabbar_compose_icon_add_highlighted"), for: .selected)
+        
+        btn.addTarget(self, action: #selector(showvc), for:.touchUpInside)
+        return btn
+    }()
+    
+}
+extension DZCMainViewController{
+    //在load哪里添加执行方法
+    
+    private func setbutton(){
+        let count = CGFloat(children.count)
+        let widthsubsview = tabBar.bounds.width/count-1
+        
+        button.frame=tabBar.bounds.insetBy(dx: 2*widthsubsview, dy: 0)
+        tabBar.addSubview(button)
     }
     
     
     
-}
-extension DZCMainViewController{
-    //子类方法,要实例化使用,类似分类
-     func tabbarsubsvc()->DZCTabBarViewController{
+    private  func tabbarsubsvc(){
         let tabbararray = [
             ["classVC":"DZCHomeViewController","title":"首页","image":"home"],
-             ["classVC":"DZCDiscoverController","title":"发现","image":"discover"],
-             ["classVC":"DZCMessageViewController","title":"信息","image":"message_center"],
-             ["classVC":"DZCMyinfoViewController","title":"我","image":"profile"]
+            ["classVC":"DZCDiscoverController","title":"发现","image":"discover"],
+            ["classVC":"UIViewController","title":"添加"],
+            ["classVC":"DZCMessageViewController","title":"信息","image":"message_center"],
+            ["classVC":"DZCMyinfoViewController","title":"我","image":"profile"]
         ]
         var marray = [UIViewController]()
         
@@ -35,10 +59,11 @@ extension DZCMainViewController{
             marray.append(subsVC(dict:dict))
         }
         
-        let tabbar = DZCTabBarViewController()
         
-        tabbar.viewControllers=marray
-        return tabbar
+        viewControllers=marray
+        
+        
+        
     }
     
     
@@ -46,8 +71,6 @@ extension DZCMainViewController{
     private func subsVC(dict:[String:String])->UIViewController{
         //根据字典名称创建控制器
         let str = Bundle.main.infoDictionary?["CFBundleName"]as? String ?? ""
-        //tabbar_compose_button_highlighted,tabbar_discover
-        
         
         guard let clsname=dict["classVC"],let title=dict["title"],let image=dict["image"],
             let clsvc=NSClassFromString(str+"."+clsname)as?UIViewController.Type
@@ -61,7 +84,15 @@ extension DZCMainViewController{
         vc.title=title
         vc.tabBarItem.image=UIImage.init(named: strimage)
         vc.tabBarItem.selectedImage=UIImage.init(named: strimage+"_"+"highlighted")?.withRenderingMode(.alwaysOriginal)
-        let navivc = DZCNavigationController.init(rootViewController: vc)
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.orange], for:.selected)
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14)], for:.normal)
+        
+        
+        
+        
+        let navivc = DZCNavigationController(rootViewController: vc)
+        
+        
         
         return navivc
         

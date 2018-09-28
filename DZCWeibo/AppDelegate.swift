@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window=UIWindow()
         
         //实例化子类方法作为rootVC使用
-        let mainvc = DZCMainViewController()
+    
         
-        self.window?.rootViewController=mainvc.tabbarsubsvc()
-        self.window?.backgroundColor=UIColor.orange
+        self.window?.rootViewController=DZCMainViewController()
+        self.window?.backgroundColor=UIColor.white
         self.window?.makeKeyAndVisible()
         
         return true
