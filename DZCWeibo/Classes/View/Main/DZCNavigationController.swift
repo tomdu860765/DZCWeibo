@@ -13,18 +13,35 @@ class DZCNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+   self.navigationBar.isHidden=true
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        
+        
+        if children.count>0 {
+             viewController.hidesBottomBarWhenPushed=true
+        }
+       
+       
+        if let vc = viewController as? DZCBaseViewController{
+            var title = "返回"
+            if children.count==1{
+               title = children.first?.title ?? "返回"
+                
+            }
+            
+           vc.navbar.leftBarButtonItem=UIBarButtonItem.init(title: title, action: #selector(getback),
+                                                                                        target: self, normalcolor: UIColor.darkGray, highlightedcolor: UIColor.orange)
+        }
+         super.pushViewController(viewController, animated: true)
+    }
+   
+    @objc private func getback(){
+        
+        popViewController(animated: true)
+        
+    }
 
 }
+

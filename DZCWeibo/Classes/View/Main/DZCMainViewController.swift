@@ -17,14 +17,13 @@ class DZCMainViewController: UITabBarController {
     }
     @objc private func showvc(){
         
-        print("我被点击了")
+        print("我是添加微博")
     }
     private lazy var button:UIButton = {
-        let btn=UIButton()
-        btn.setBackgroundImage(UIImage.init(named:"tabbar_compose_button"), for:.normal)
-        btn.setBackgroundImage(UIImage.init(named:"tabbar_compose_button_highlighted"), for:.selected)
-        btn.setImage(UIImage.init(named: "tabbar_compose_icon_add"), for: .normal)
-        btn.setImage(UIImage.init(named: "tabbar_compose_icon_add_highlighted"), for: .selected)
+        let btn=UIButton.init(NormalBackgroundImage: "tabbar_compose_button", Image: "tabbar_compose_icon_add",
+                              SelectedBackgroundImage: "tabbar_compose_button_highlighted",
+                              SelectedImage: "tabbar_compose_icon_add_highlighted")
+
         
         btn.addTarget(self, action: #selector(showvc), for:.touchUpInside)
         return btn

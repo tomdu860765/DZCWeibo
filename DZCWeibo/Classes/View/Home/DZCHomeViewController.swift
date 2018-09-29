@@ -12,19 +12,24 @@ class DZCHomeViewController: DZCBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        naviitem()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc private func frientsview(){
+        let friendsdemovc = DZCTestViewController()
+        navigationController?.pushViewController(friendsdemovc, animated: true)
+        
     }
-    */
+    
+    private func naviitem(){
+      
+  
+        navbar.leftBarButtonItem=UIBarButtonItem(title: "好友", action:#selector(frientsview),
+                                                         target: self, normalcolor: UIColor.darkGray,
+                                                         highlightedcolor: UIColor.orange)
+    }
+   
 
 }
+
