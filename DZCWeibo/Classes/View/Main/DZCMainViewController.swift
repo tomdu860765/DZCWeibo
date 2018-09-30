@@ -19,6 +19,7 @@ class DZCMainViewController: UITabBarController {
         
         print("我是添加微博")
     }
+    
     private lazy var button:UIButton = {
         let btn=UIButton.init(NormalBackgroundImage: "tabbar_compose_button", Image: "tabbar_compose_icon_add",
                               SelectedBackgroundImage: "tabbar_compose_button_highlighted",
@@ -28,6 +29,7 @@ class DZCMainViewController: UITabBarController {
         btn.addTarget(self, action: #selector(showvc), for:.touchUpInside)
         return btn
     }()
+
     
 }
 extension DZCMainViewController{
@@ -36,7 +38,7 @@ extension DZCMainViewController{
     private func setbutton(){
         let count = CGFloat(children.count)
         let widthsubsview = tabBar.bounds.width/count-1
-        
+     
         button.frame=tabBar.bounds.insetBy(dx: 2*widthsubsview, dy: 0)
         tabBar.addSubview(button)
     }
@@ -59,9 +61,9 @@ extension DZCMainViewController{
         }
         
         
-        viewControllers=marray
+       viewControllers=marray
         
-        
+       
         
     }
     

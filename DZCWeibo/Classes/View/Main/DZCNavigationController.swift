@@ -25,7 +25,7 @@ class DZCNavigationController: UINavigationController {
        
        
         if let vc = viewController as? DZCBaseViewController{
-            var title = "返回"
+            var title = ""
             if children.count==1{
                title = children.first?.title ?? "返回"
                 
