@@ -1,0 +1,42 @@
+[
+  {
+    "image" : "home",
+    "title" : "首页",
+    "classVC" : "DZCHomeViewController",
+    "visitorinfo" : {
+      "message" : "我是视图一,欢迎登陆微博,打开另一个世界",
+      "imagename" : ""
+    }
+  },
+  {
+    "image" : "discover",
+    "title" : "发现",
+    "classVC" : "DZCDiscoverController",
+    "visitorinfo" : {
+      "message" : "我是视图二,欢迎登陆微博,打开另一个世界",
+      "imagename" : ""
+    }
+  },
+  {
+    "title" : "添加",
+    "classVC" : "UIViewController"
+  },
+  {
+    "image" : "message_center",
+    "title" : "信息",
+    "classVC" : "DZCMessageViewController",
+    "visitorinfo" : {
+      "message" : "我是视图三,欢迎登陆微博,打开另一个世界",
+      "imagename" : "visitordiscover_image_message"
+    }
+  },
+  {
+    "image" : "profile",
+    "title" : "我",
+    "classVC" : "DZCMyinfoViewController",
+    "visitorinfo" : {
+      "message" : "我是视图四,欢迎登陆微博,打开另一个世界",
+      "imagename" : "visitordiscover_image_profile"
+    }
+  }
+]

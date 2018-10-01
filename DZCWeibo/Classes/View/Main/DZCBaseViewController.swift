@@ -11,11 +11,18 @@ import UIKit
 class DZCBaseViewController: UIViewController {
     
     var basevctableview:UITableView?
+    
     var refresh :UIRefreshControl?
+    //标记刷新状态
+    var isrefresh = false
+    //标记访客状态
+    var isvisitor = true
+    //定义一个可变字典属性
+    var visitordict : [String:String]?
     
     lazy var mynaviBar:UINavigationBar={
         let bar=UINavigationBar()
-        bar.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: 64)
+        bar.frame = CGRect(x: 0, y: 31, width: UIScreen.main.bounds.width, height: 64)
         
         return bar
     }()
@@ -29,7 +36,8 @@ class DZCBaseViewController: UIViewController {
         basevctableview?.delegate=self
         view.addSubview(mynaviBar)
         mynaviBar.items=[navbar]
-        setupTableview()
+        isvisitor ? setupVisitorView():setupTableview()
+        
     }
     @objc private func loadinfo(){
         print("加载了数据")
@@ -58,6 +66,14 @@ class DZCBaseViewController: UIViewController {
         
         
     }
+    private func setupVisitorView(){
+        let visitorview = DZCVistorView()
+       
+        visitorview.visitordictionary=self.visitordict
+       
+        view.insertSubview(visitorview, belowSubview: mynaviBar)
+        
+    }
 }
 extension  DZCBaseViewController:UITableViewDataSource,UITableViewDelegate{
     
@@ -71,6 +87,19 @@ extension  DZCBaseViewController:UITableViewDataSource,UITableViewDelegate{
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let section = tableView.numberOfSections-1
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row<0||section<0 {
+            print("没有任何数据")
+            return
+        }
+        if row==(count-1) && isrefresh==false {
+            print("上啦刷新")
+        }
+        
+    }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class DZCMainViewController: UITabBarController {
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabbarsubsvc()
@@ -19,6 +19,8 @@ class DZCMainViewController: UITabBarController {
         
         print("我是添加微博")
     }
+   
+    
     
     private lazy var button:UIButton = {
         let btn=UIButton.init(NormalBackgroundImage: "tabbar_compose_button", Image: "tabbar_compose_icon_add",
@@ -46,16 +48,26 @@ extension DZCMainViewController{
     
     
     private  func tabbarsubsvc(){
-        let tabbararray = [
-            ["classVC":"DZCHomeViewController","title":"首页","image":"home"],
-            ["classVC":"DZCDiscoverController","title":"发现","image":"discover"],
-            ["classVC":"UIViewController","title":"添加"],
-            ["classVC":"DZCMessageViewController","title":"信息","image":"message_center"],
-            ["classVC":"DZCMyinfoViewController","title":"我","image":"profile"]
-        ]
+        
+        let doucpath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        let strrul = (doucpath! as NSString).appendingPathComponent("main.json")
+        let dataurl = URL.init(fileURLWithPath: strrul)
+        var dataruljson = try? Data.init(contentsOf: dataurl)
+        if  dataruljson==nil {
+            let path=Bundle.main.url(forResource: "BaseView.json", withExtension: nil)
+           
+            dataruljson = try? Data.init(contentsOf: path!)
+        }
+   guard    let tabbararray = try? JSONSerialization.jsonObject(with: dataruljson!, options: .mutableContainers) as?[[String:Any]]
+            else {
+
+          print("编译json文件失败")
+           return
+       }
+        
         var marray = [UIViewController]()
         
-        for dict in tabbararray {
+        for dict in tabbararray! {
             
             marray.append(subsVC(dict:dict))
         }
@@ -63,18 +75,20 @@ extension DZCMainViewController{
         
        viewControllers=marray
         
-       
         
     }
     
     
     
-    private func subsVC(dict:[String:String])->UIViewController{
+    private func subsVC(dict:[String:Any])->UIViewController{
         //根据字典名称创建控制器
         let str = Bundle.main.infoDictionary?["CFBundleName"]as? String ?? ""
         
-        guard let clsname=dict["classVC"],let title=dict["title"],let image=dict["image"],
-            let clsvc=NSClassFromString(str+"."+clsname)as?UIViewController.Type
+        guard let clsname=dict["classVC"]as?String,
+            let title=dict["title"]as?String,
+            let image=dict["image"]as?String,
+            let clsvc=NSClassFromString(str+"."+clsname)as?DZCBaseViewController.Type,
+            let basevcdict = dict["visitorinfo"]as?[String:String]
             else
         {
             return UIViewController()
@@ -82,6 +96,7 @@ extension DZCMainViewController{
         }
         let strimage="tabbar"+"_"+image
         let vc = clsvc.init()
+        vc.visitordict=basevcdict
         vc.title=title
         vc.tabBarItem.image=UIImage.init(named: strimage)
         vc.tabBarItem.selectedImage=UIImage.init(named: strimage+"_"+"highlighted")?.withRenderingMode(.alwaysOriginal)
