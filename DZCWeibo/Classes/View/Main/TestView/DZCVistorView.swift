@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class DZCVistorView: UIView {
     var  visitordictionary:[String:String]?{
@@ -32,13 +33,8 @@ class DZCVistorView: UIView {
     override init(frame: CGRect) {
         super.init(frame:frame)
         setvisitorview()
-      
-      
+
           feedimageanmiation()        }
-    
-    
-    
-        
     
     required init?(coder aDecoder: NSCoder) {
         self.init()
@@ -52,6 +48,7 @@ class DZCVistorView: UIView {
         button.sizeToFit()
         button.frame.origin.x=self.center.x-70
         button.frame.origin.y=self.center.y-20
+   
         return button
     }()
     private lazy var registerbutton:UIButton={
@@ -71,6 +68,7 @@ class DZCVistorView: UIView {
       imageview.frame.origin.x=self.center.x-50
       imageview.frame.origin.y=self.center.y-160
         imageview.isUserInteractionEnabled=false
+      
         return imageview
     }()
     private lazy var feedimage:UIImageView={

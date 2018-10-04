@@ -49,6 +49,7 @@ extension DZCMainViewController{
     
     private  func tabbarsubsvc(){
         
+        
         let doucpath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
         let strrul = (doucpath! as NSString).appendingPathComponent("main.json")
         let dataurl = URL.init(fileURLWithPath: strrul)

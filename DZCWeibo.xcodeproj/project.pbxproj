@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2201728021650C500055B48A /* DZCNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201727F21650C500055B48A /* DZCNetWorkManager.swift */; };
+		22017282216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22017281216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift */; };
 		226A7ACC215F0C760048ADCA /* UIButton+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A7ACB215F0C760048ADCA /* UIButton+Image.swift */; };
 		226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
 		226F510C2161A525006E1DC6 /* BaseView.json in Sources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
@@ -22,12 +24,17 @@
 		226F6835215BC89500F26441 /* DZCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6834215BC89500F26441 /* DZCMessageViewController.swift */; };
 		226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */; };
 		22921EF7215BF09900B947EB /* UIImage+ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22921EF6215BF09900B947EB /* UIImage+ImageName.swift */; };
+		22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63462165B5CE000536AF /* DZCWeiboModel.swift */; };
+		22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */; };
 		22D00892215DC1FD003C771A /* DZCTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D00891215DC1FD003C771A /* DZCTestViewController.swift */; };
 		22D00894215DCC72003C771A /* UIBarButtonItem+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */; };
 		22DE3DAF2160EBD0007003E7 /* DZCVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE3DAE2160EBD0007003E7 /* DZCVistorView.swift */; };
+		A69508BBB7C19F7E7A0CF421 /* Pods_DZCWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D96F52BF93E8D206C28783A /* Pods_DZCWeibo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2201727F21650C500055B48A /* DZCNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCNetWorkManager.swift; sourceTree = "<group>"; };
+		22017281216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DZCNetWorkManager+JsonWeibo.swift"; sourceTree = "<group>"; };
 		226A7ACB215F0C760048ADCA /* UIButton+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Image.swift"; sourceTree = "<group>"; };
 		226F510A2161A4D9006E1DC6 /* BaseView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BaseView.json; sourceTree = "<group>"; };
 		226F6809215BC12D00F26441 /* DZCWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZCWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,9 +51,14 @@
 		226F6834215BC89500F26441 /* DZCMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMessageViewController.swift; sourceTree = "<group>"; };
 		226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMyinfoViewController.swift; sourceTree = "<group>"; };
 		22921EF6215BF09900B947EB /* UIImage+ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageName.swift"; sourceTree = "<group>"; };
+		22CA63462165B5CE000536AF /* DZCWeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboModel.swift; sourceTree = "<group>"; };
+		22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiBoViewModel.swift; sourceTree = "<group>"; };
 		22D00891215DC1FD003C771A /* DZCTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCTestViewController.swift; sourceTree = "<group>"; };
 		22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Custom.swift"; sourceTree = "<group>"; };
 		22DE3DAE2160EBD0007003E7 /* DZCVistorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCVistorView.swift; sourceTree = "<group>"; };
+		4D96F52BF93E8D206C28783A /* Pods_DZCWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DZCWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE53C13DCD0946B6E0DE1E0E /* Pods-DZCWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZCWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DZCWeibo/Pods-DZCWeibo.release.xcconfig"; sourceTree = "<group>"; };
+		DE871C28D444CF3CDD6609C0 /* Pods-DZCWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZCWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DZCWeibo/Pods-DZCWeibo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,17 +66,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A69508BBB7C19F7E7A0CF421 /* Pods_DZCWeibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2201727E216506720055B48A /* NetWorkTools */ = {
+			isa = PBXGroup;
+			children = (
+				2201727F21650C500055B48A /* DZCNetWorkManager.swift */,
+				22017281216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift */,
+			);
+			path = NetWorkTools;
+			sourceTree = "<group>";
+		};
 		226F6800215BC12D00F26441 = {
 			isa = PBXGroup;
 			children = (
 				226F680B215BC12D00F26441 /* DZCWeibo */,
 				226F680A215BC12D00F26441 /* Products */,
+				6E1432AAA72DA84942C57943 /* Pods */,
+				6FD0B083F65939CE6C1E094C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -104,6 +128,7 @@
 		226F681F215BC69D00F26441 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22CA63462165B5CE000536AF /* DZCWeiboModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +136,7 @@
 		226F6820215BC69D00F26441 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2201727E216506720055B48A /* NetWorkTools */,
 				22921EF5215BF06800B947EB /* Extension */,
 			);
 			path = Tools;
@@ -175,6 +201,7 @@
 		226F6827215BC69D00F26441 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -198,6 +225,23 @@
 			path = TestView;
 			sourceTree = "<group>";
 		};
+		6E1432AAA72DA84942C57943 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE871C28D444CF3CDD6609C0 /* Pods-DZCWeibo.debug.xcconfig */,
+				CE53C13DCD0946B6E0DE1E0E /* Pods-DZCWeibo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6FD0B083F65939CE6C1E094C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D96F52BF93E8D206C28783A /* Pods_DZCWeibo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +249,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 226F681B215BC13100F26441 /* Build configuration list for PBXNativeTarget "DZCWeibo" */;
 			buildPhases = (
+				AF6ED202BEAD6161E782EA07 /* [CP] Check Pods Manifest.lock */,
 				226F6805215BC12D00F26441 /* Sources */,
 				226F6806215BC12D00F26441 /* Frameworks */,
 				226F6807215BC12D00F26441 /* Resources */,
+				09A05440BBE5B363CE282917 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,20 +311,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09A05440BBE5B363CE282917 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DZCWeibo/Pods-DZCWeibo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DZCWeibo/Pods-DZCWeibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF6ED202BEAD6161E782EA07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DZCWeibo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		226F6805215BC12D00F26441 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				226F510C2161A525006E1DC6 /* BaseView.json in Sources */,
+				22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */,
 				226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */,
+				22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */,
 				22D00892215DC1FD003C771A /* DZCTestViewController.swift in Sources */,
 				226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */,
 				22D00894215DCC72003C771A /* UIBarButtonItem+Custom.swift in Sources */,
 				22921EF7215BF09900B947EB /* UIImage+ImageName.swift in Sources */,
 				22DE3DAF2160EBD0007003E7 /* DZCVistorView.swift in Sources */,
 				226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */,
+				2201728021650C500055B48A /* DZCNetWorkManager.swift in Sources */,
 				226F682F215BC80900F26441 /* DZCBaseViewController.swift in Sources */,
+				22017282216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift in Sources */,
 				226F6831215BC86E00F26441 /* DZCDiscoverController.swift in Sources */,
 				226F682D215BC7F500F26441 /* DZCNavigationController.swift in Sources */,
 				226F682B215BC7C200F26441 /* DZCTabBarViewController.swift in Sources */,
@@ -420,6 +529,7 @@
 		};
 		226F681C215BC13100F26441 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE871C28D444CF3CDD6609C0 /* Pods-DZCWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
@@ -440,6 +550,7 @@
 		};
 		226F681D215BC13100F26441 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE53C13DCD0946B6E0DE1E0E /* Pods-DZCWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
