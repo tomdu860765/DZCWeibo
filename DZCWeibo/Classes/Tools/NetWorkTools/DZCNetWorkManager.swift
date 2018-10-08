@@ -18,12 +18,18 @@ class DZCNetWorkManager: AFHTTPSessionManager {
     
      static let DefaultNetWork=DZCNetWorkManager()
     
-    var paratoken:String?="2.00gBnWYF0o747s05b99814f5gdeNeC"
+    //加载自定义模型
+   lazy var account=DZCAccountModel()
    
+    lazy var signin:Bool={
+   
+       return account.access_token != nil
+    }()
+    
    //处理token的方法
-    func tokenrequest(Method:NetWorkWays = .GET,URLString:String,Token:[String:Any]?,Completion:@escaping (AnyObject?,Bool)->())  {
+    func tokenrequest(Method:NetWorkWays,URLString:String,Token:[String:Any]?,Completion:@escaping (AnyObject?,Bool)->())  {
         
-        guard let weibotoken=paratoken else {
+        guard let weibotoken=account.access_token else {
             print("请用账号登陆")
             Completion(nil,false)
             return
@@ -38,13 +44,13 @@ class DZCNetWorkManager: AFHTTPSessionManager {
         
         
         
-        NetWeiboHomeInfo(URLString: URLString, Token: Token!, Completion:Completion)
+        NetWeiboHomeInfo(Method:.GET,URLString: URLString, Token: Token!, Completion:Completion)
     }
     
     
 
     
-    func NetWeiboHomeInfo(Method:NetWorkWays = .GET,URLString:String,Token:[String:Any],Completion:@escaping (AnyObject?,Bool)->())  {
+    func NetWeiboHomeInfo(Method:NetWorkWays,URLString:String,Token:[String:Any],Completion:@escaping (AnyObject?,Bool)->())  {
         let Success = {
             (task:URLSessionDataTask,json:Any?)->() in
             Completion(json as AnyObject,true)
@@ -57,20 +63,21 @@ class DZCNetWorkManager: AFHTTPSessionManager {
             print("网络请求失败\(error)")
             Completion(error as AnyObject,false)
         }
-        
-        if NetWorkWays.GET == .GET {
+        switch Method{
+        case  .GET: do {
             DZCNetWorkManager.DefaultNetWork.get(URLString, parameters: Token, progress: nil,
                                                  success: Success,
                                                  failure: Failure)
-           
+           print("Get方法被执行")
         }
-      else
-        {  DZCNetWorkManager.DefaultNetWork.post(URLString, parameters: Token,
+        case .POST: do {
+          DZCNetWorkManager.DefaultNetWork.post(URLString, parameters: Token,
                                                  progress: nil,
                                                  success: Success,
                                                  failure: Failure)
+            print("post方法被执行")
         }
-
+        }
         
     }
 

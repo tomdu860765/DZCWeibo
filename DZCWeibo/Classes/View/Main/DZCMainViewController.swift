@@ -14,16 +14,35 @@ class DZCMainViewController: UITabBarController {
         super.viewDidLoad()
         tabbarsubsvc()
         setbutton()
+        delegate=self
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(loginshowtableview),
+                                               name: NSNotification.Name(rawValue: UserNotification),
+                                               object: nil)
+        
     }
+
     @objc private func showvc(){
         
         print("我是添加微博")
+        
     }
-   
-    
+    @objc private func loginshowtableview(){
+        
+        print(NSNotification.Name.self)
+        let webvc = UINavigationController.init(rootViewController: DZCWebView())
+      
+        
+        self.present(webvc, animated: true, completion: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+ 
     
     private lazy var button:UIButton = {
-        let btn=UIButton.init(NormalBackgroundImage: "tabbar_compose_button", Image: "tabbar_compose_icon_add",
+        let btn=UIButton.init(NormalBackgroundImage: "tabbar_compose_button",
+                              Image: "tabbar_compose_icon_add",
                               SelectedBackgroundImage: "tabbar_compose_button_highlighted",
                               SelectedImage: "tabbar_compose_icon_add_highlighted")
 
@@ -31,9 +50,26 @@ class DZCMainViewController: UITabBarController {
         btn.addTarget(self, action: #selector(showvc), for:.touchUpInside)
         return btn
     }()
-
+   
     
 }
+extension DZCMainViewController:UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
+        let index = (viewControllers! as NSArray).index(of: viewController)
+        if selectedIndex==0 && selectedIndex==index {
+            print("点击首页")
+            let navvc = viewControllers?.first as! UINavigationController
+            let vc = navvc.viewControllers.first as! DZCHomeViewController
+            vc.basevctableview?.setContentOffset(CGPoint.init(x: 0, y: -64), animated: true)
+         
+        }
+        
+       return !viewController.isMember(of: UIViewController.self)
+        
+    }
+    
+}
+
 extension DZCMainViewController{
     //在load哪里添加执行方法
     
@@ -50,7 +86,7 @@ extension DZCMainViewController{
     private  func tabbarsubsvc(){
         
         
-        let doucpath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        let doucpath = documentpath
         let strrul = (doucpath! as NSString).appendingPathComponent("main.json")
         let dataurl = URL.init(fileURLWithPath: strrul)
         var dataruljson = try? Data.init(contentsOf: dataurl)
@@ -114,11 +150,5 @@ extension DZCMainViewController{
         return navivc
         
     }
-    
-    
-    
-    
-    
-    
     
 }

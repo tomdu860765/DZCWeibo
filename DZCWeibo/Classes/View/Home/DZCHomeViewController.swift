@@ -9,41 +9,36 @@
 import UIKit
 
 class DZCHomeViewController: DZCBaseViewController {
-    var basevctableview:UITableView?
-    private var viwemodel = WeiBoListArrayModel()
-  
+  private lazy var viwemodel = WeiBoListArrayModel()
+    
       override func viewDidLoad() {
         super.viewDidLoad()
         
         naviitem()
-        
-        isvisitor ? setupVisitorView():setupTableview()
+        refresh?.addTarget(self, action: #selector(loadinfo), for: .valueChanged)
         basevctableview?.dataSource=self
         basevctableview?.delegate=self
         
-         self.viwemodel.loadarray { (issuccess) in
+        self.viwemodel.loadarray(ispull: true) { (issuccess,refreashcount)  in
                 self.refresh?.endRefreshing()
                 self.isrefresh=false
             //异步回调到主现程刷新界面要使用EXECUTE:
+           
             DispatchQueue.main.async(execute: {
                 self.basevctableview?.reloadData()
-                
             })
             
-                
             }
-      
-     
         
     }
     @objc private func loadinfo(){
         refresh?.endRefreshing()
-        viwemodel.loadarray { (issuccess) in
+        viwemodel.loadarray(ispull: true) { (issuccess,refreashcount) in
             self.refresh?.endRefreshing()
-            self.basevctableview?.reloadData()
-            self.isrefresh=false
-    
            
+            self.basevctableview?.reloadData()
+            
+            self.isrefresh=false
         }
     }
     @objc private func frientsview(){
@@ -53,39 +48,17 @@ class DZCHomeViewController: DZCBaseViewController {
     }
     
     private func naviitem(){
-      
-  
+        if (basevctableview == nil){
+            return
+        }else
+        {
         navbar.leftBarButtonItem=UIBarButtonItem(title: "好友", action:#selector(frientsview),
                                                          target: self, normalcolor: UIColor.darkGray,
-                                                         highlightedcolor: UIColor.orange)
-    }
-     func setupTableview(){
-        basevctableview=UITableView(frame: UIScreen.main.bounds, style:.plain)
-        basevctableview?.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
-        view.insertSubview(basevctableview!, belowSubview: mynaviBar)
-        basevctableview?.showsVerticalScrollIndicator=false
-        basevctableview?.contentInsetAdjustmentBehavior = .never
-        basevctableview?.contentInset=UIEdgeInsets.init(top:mynaviBar.bounds.size.height ,
-                                                        left: 0,
-                                                        bottom:tabBarController?.tabBar.bounds.size.height ?? 0,
-                                                        right: 0)
-       
-       
-        refresh=UIRefreshControl()
-        refresh?.addTarget(self, action: #selector(loadinfo), for: .valueChanged)
-        basevctableview?.addSubview(refresh!)
-        
-            self.basevctableview?.reloadData()
+                                                         highlightedcolor: UIColor.orange)}
         
     }
-    private func setupVisitorView(){
-        let visitorview = DZCVistorView()
-        
-        visitorview.visitordictionary=self.visitordict
-        
-        view.insertSubview(visitorview, belowSubview: mynaviBar)
-        
-    }
+
+    
 
 }
 extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
@@ -113,7 +86,8 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
             return
         }
         if row==(count-1) && isrefresh==false {
-            print("上啦刷新")
+            
+            loadinfo()
         }
 
 }
