@@ -9,6 +9,7 @@
 import UIKit
 import AFNetworking
 import YYModel
+import SDWebImage
 class DZCBaseViewController: UIViewController {
     //判断设备高度
     let deviceH = UIScreen.main.bounds.size.height
@@ -23,10 +24,10 @@ class DZCBaseViewController: UIViewController {
     var refresh :UIRefreshControl?
     //标记刷新状态
     var isrefresh = false
-    //标记访客状态
-   // var isvisitor = false
+   
     //定义一个可变字典属性
     var visitordict : [String:String]?
+    
     lazy var statusBar:UIView={
         let view=UIView()
         if deviceH < 812{
@@ -48,6 +49,13 @@ class DZCBaseViewController: UIViewController {
         return bar
     }()
     
+    lazy var navibtn:UIButton={
+        let btn=UIButton()
+       btn.setTitle(DZCAccountModel.init().screen_name, for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.sizeToFit()
+        return btn
+    }()
 
     
     override func viewDidLoad() {
@@ -55,17 +63,15 @@ class DZCBaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(signinsuccess),
                                                name:NSNotification.Name(rawValue: UserSigninNotification) , object: nil)
        
-        
         if (DZCNetWorkManager.DefaultNetWork.account.access_token) != nil
         {
               self.setupTableview()
+             navbar.titleView=self.navibtn
 
         }else{
                self.setupVisitorView()
-           
         }
-  
-        
+
         view.addSubview(statusBar)
         view.addSubview(mynaviBar)
         mynaviBar.items=[navbar]
@@ -82,7 +88,7 @@ class DZCBaseViewController: UIViewController {
         }
        NotificationCenter.default.removeObserver(self)
     }
-    
+  
     
     override var title: String?{
         
@@ -104,7 +110,7 @@ class DZCBaseViewController: UIViewController {
         view.insertSubview(basevctableview!, belowSubview: mynaviBar)
         basevctableview?.showsVerticalScrollIndicator=false
         basevctableview?.contentInsetAdjustmentBehavior = .never
-        basevctableview?.contentInset=UIEdgeInsets.init(top:mynaviBar.bounds.size.height ,
+        basevctableview?.contentInset=UIEdgeInsets.init(top:mynaviBar.bounds.size.height+44 ,
                                                         left: 0,
                                                         bottom:tabBarController?.tabBar.bounds.size.height ?? 0,
                                                         right: 0)
@@ -113,6 +119,7 @@ class DZCBaseViewController: UIViewController {
         refresh=UIRefreshControl()
         basevctableview?.addSubview(refresh!)
         self.basevctableview?.reloadData()
+        navbar.titleView=navibtn
+    }
     
-    }}
-
+}

@@ -30,7 +30,7 @@ extension DZCNetWorkManager{
 }
 extension DZCNetWorkManager{
     
-    func usersignin(code:String,completion:@escaping (Bool)->()) {
+     func usersignin(code:String,completion:@escaping (Bool)->()) {
 
         let codepath = "https://api.weibo.com/oauth2/access_token"
         
@@ -48,11 +48,29 @@ extension DZCNetWorkManager{
            
             //保存模型
             self.account.saveaccount()
+            self.usernameandpic()
         
             completion(issuccess)
         }
         
     }
     
+ private   func usernameandpic() {
+        let url = "https://api.weibo.com/2/users/show.json"
+        let tokeninfo = ["uid":account.uid,"access_token":account.access_token]
+        print(tokeninfo)
+        tokenrequest(Method: .GET, URLString: url, Token: tokeninfo as! [String : String] ) { (infojson, issuccess) in
+            if issuccess==true
+            {self.account.yy_modelSet(withJSON: infojson as Any)
+             print("把姓名和头像写入模型")
+            }else
+            {
+                print("连接错误获取json失败")
+            }
+            
+        }
+        
+    }
+
 
 }

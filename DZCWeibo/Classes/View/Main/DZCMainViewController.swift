@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class DZCMainViewController: UITabBarController {
      
     override func viewDidLoad() {
@@ -19,25 +19,52 @@ class DZCMainViewController: UITabBarController {
                                                selector: #selector(loginshowtableview),
                                                name: NSNotification.Name(rawValue: UserNotification),
                                                object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(showalertvc),
+                                               name:Notification.Name(rawValue: UserExtimeNotification) ,
+                                               object: nil)
+
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 
     @objc private func showvc(){
-        
+        DZCNetWorkManager.DefaultNetWork.account.access_token = "过期"
         print("我是添加微博")
         
     }
+    ///makr token过期提醒栏
+    @objc private func showalertvc(){
+//        let alertvc=UIAlertController.init(title: "警告", message: "你的账户已过期,请按“确认”重新登录", preferredStyle: .alert)
+//        let webvc = UINavigationController.init(rootViewController: DZCWebView())
+//        let alertvcaction = UIAlertAction.init(title: "确认", style: .default) { (UIAlertAction) in
+//
+//            self.present(webvc, animated: true, completion: nil)
+//            print("完成推送")
+//        }
+//        alertvc.addAction(alertvcaction)
+       // self.present(alertvc, animated:true, completion: nil)
+        SVProgressHUD.showInfo(withStatus: "你的账户已经过期,请重新登录")
+        SVProgressHUD.dismiss(withDelay: 1) {
+            let webvc = UINavigationController.init(rootViewController: DZCWebView())
+            self.present(webvc, animated: true, completion: nil)
+        }
+       
+        
+        
+    }
+    
+    
     @objc private func loginshowtableview(){
         
-        print(NSNotification.Name.self)
+        //print(NSNotification.Name.self)
         let webvc = UINavigationController.init(rootViewController: DZCWebView())
       
         
         self.present(webvc, animated: true, completion: nil)
     }
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+
  
     
     private lazy var button:UIButton = {
@@ -86,8 +113,8 @@ extension DZCMainViewController{
     private  func tabbarsubsvc(){
         
         
-        let doucpath = documentpath
-        let strrul = (doucpath! as NSString).appendingPathComponent("main.json")
+       
+        let strrul = (documentpath as NSString?)!.appendingPathComponent("main.json")
         let dataurl = URL.init(fileURLWithPath: strrul)
         var dataruljson = try? Data.init(contentsOf: dataurl)
         if  dataruljson==nil {
@@ -134,7 +161,9 @@ extension DZCMainViewController{
         let strimage="tabbar"+"_"+image
         let vc = clsvc.init()
         vc.visitordict=basevcdict
+        //fix 现在title登陆后要跟我们用户账户名字一样
         vc.title=title
+        
         vc.tabBarItem.image=UIImage.init(named: strimage)
         vc.tabBarItem.selectedImage=UIImage.init(named: strimage+"_"+"highlighted")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.orange], for:.selected)
@@ -150,5 +179,6 @@ extension DZCMainViewController{
         return navivc
         
     }
+ 
     
 }

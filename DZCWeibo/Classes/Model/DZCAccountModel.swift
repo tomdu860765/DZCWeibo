@@ -20,11 +20,14 @@ class DZCAccountModel: NSObject {
         }
         
     }
-
+   //用户uid
     var  uid : String?
-    
+    //过期时间
     var expiresdata :Date?
-    
+    //用户昵称
+    var screen_name : String?
+    //用户头像地址
+    var avatar_large : String?
     
     override var description: String{
         
@@ -78,3 +81,4 @@ class DZCAccountModel: NSObject {
     }
     
 }
+

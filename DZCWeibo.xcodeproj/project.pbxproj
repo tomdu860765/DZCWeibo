@@ -13,17 +13,19 @@
 		226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
 		226F510C2161A525006E1DC6 /* BaseView.json in Sources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
 		226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F680C215BC12D00F26441 /* AppDelegate.swift */; };
-		226F6814215BC13100F26441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F6813215BC13100F26441 /* Assets.xcassets */; };
-		226F6817215BC13100F26441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F6815215BC13100F26441 /* LaunchScreen.storyboard */; };
 		226F6829215BC77100F26441 /* DZCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6828215BC77100F26441 /* DZCMainViewController.swift */; };
-		226F682B215BC7C200F26441 /* DZCTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F682A215BC7C200F26441 /* DZCTabBarViewController.swift */; };
 		226F682D215BC7F500F26441 /* DZCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F682C215BC7F500F26441 /* DZCNavigationController.swift */; };
 		226F682F215BC80900F26441 /* DZCBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F682E215BC80900F26441 /* DZCBaseViewController.swift */; };
 		226F6831215BC86E00F26441 /* DZCDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6830215BC86E00F26441 /* DZCDiscoverController.swift */; };
 		226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6832215BC88000F26441 /* DZCHomeViewController.swift */; };
 		226F6835215BC89500F26441 /* DZCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6834215BC89500F26441 /* DZCMessageViewController.swift */; };
 		226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */; };
+		22857DFB216C52B8004AA2EF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22857DFA216C52B8004AA2EF /* Launch Screen.storyboard */; };
+		22857DFC216C537C004AA2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F6813215BC13100F26441 /* Assets.xcassets */; };
+		22857E01216CEFD0004AA2EF /* DZCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22857E00216CEFD0004AA2EF /* DZCCollectionViewController.swift */; };
 		22921EF7215BF09900B947EB /* UIImage+ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22921EF6215BF09900B947EB /* UIImage+ImageName.swift */; };
+		229F5C2F216F22FD00C8A99F /* DZCWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229F5C2E216F22FD00C8A99F /* DZCWelcomeViewController.swift */; };
+		229F5C31216F257F00C8A99F /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229F5C30216F257F00C8A99F /* WelcomeView.storyboard */; };
 		22B7D1D1216876D2004C4E07 /* UserNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D0216876D2004C4E07 /* UserNotify.swift */; };
 		22B7D1D32168C13E004C4E07 /* DZCWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D22168C13E004C4E07 /* DZCWebView.swift */; };
 		22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63462165B5CE000536AF /* DZCWeiboModel.swift */; };
@@ -46,14 +48,17 @@
 		226F6816215BC13100F26441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226F6818215BC13100F26441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		226F6828215BC77100F26441 /* DZCMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMainViewController.swift; sourceTree = "<group>"; };
-		226F682A215BC7C200F26441 /* DZCTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCTabBarViewController.swift; sourceTree = "<group>"; };
 		226F682C215BC7F500F26441 /* DZCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCNavigationController.swift; sourceTree = "<group>"; };
 		226F682E215BC80900F26441 /* DZCBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCBaseViewController.swift; sourceTree = "<group>"; };
 		226F6830215BC86E00F26441 /* DZCDiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCDiscoverController.swift; sourceTree = "<group>"; };
 		226F6832215BC88000F26441 /* DZCHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCHomeViewController.swift; sourceTree = "<group>"; };
 		226F6834215BC89500F26441 /* DZCMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMessageViewController.swift; sourceTree = "<group>"; };
 		226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMyinfoViewController.swift; sourceTree = "<group>"; };
+		22857DFA216C52B8004AA2EF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		22857E00216CEFD0004AA2EF /* DZCCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCCollectionViewController.swift; sourceTree = "<group>"; };
 		22921EF6215BF09900B947EB /* UIImage+ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageName.swift"; sourceTree = "<group>"; };
+		229F5C2E216F22FD00C8A99F /* DZCWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWelcomeViewController.swift; sourceTree = "<group>"; };
+		229F5C30216F257F00C8A99F /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
 		22B7D1D0216876D2004C4E07 /* UserNotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotify.swift; sourceTree = "<group>"; };
 		22B7D1D22168C13E004C4E07 /* DZCWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWebView.swift; sourceTree = "<group>"; };
 		22CA63462165B5CE000536AF /* DZCWeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboModel.swift; sourceTree = "<group>"; };
@@ -153,6 +158,7 @@
 		226F6821215BC69D00F26441 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22857DF6216C4BD6004AA2EF /* SBView */,
 				226F6824215BC69D00F26441 /* Main */,
 				226F6822215BC69D00F26441 /* Discover */,
 				226F6823215BC69D00F26441 /* Home */,
@@ -181,9 +187,10 @@
 		226F6824215BC69D00F26441 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				229F5C2D216F22E000C8A99F /* WelcomeView */,
+				22857DFD216CEF83004AA2EF /* Newfeatures */,
 				22D00890215DC105003C771A /* TestView */,
 				226F6828215BC77100F26441 /* DZCMainViewController.swift */,
-				226F682A215BC7C200F26441 /* DZCTabBarViewController.swift */,
 				226F682C215BC7F500F26441 /* DZCNavigationController.swift */,
 				226F682E215BC80900F26441 /* DZCBaseViewController.swift */,
 			);
@@ -214,6 +221,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		22857DF6216C4BD6004AA2EF /* SBView */ = {
+			isa = PBXGroup;
+			children = (
+				22857DFA216C52B8004AA2EF /* Launch Screen.storyboard */,
+				229F5C30216F257F00C8A99F /* WelcomeView.storyboard */,
+			);
+			path = SBView;
+			sourceTree = "<group>";
+		};
+		22857DFD216CEF83004AA2EF /* Newfeatures */ = {
+			isa = PBXGroup;
+			children = (
+				22857E00216CEFD0004AA2EF /* DZCCollectionViewController.swift */,
+			);
+			path = Newfeatures;
+			sourceTree = "<group>";
+		};
 		22921EF5215BF06800B947EB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +246,14 @@
 				226A7ACB215F0C760048ADCA /* UIButton+Image.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		229F5C2D216F22E000C8A99F /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				229F5C2E216F22FD00C8A99F /* DZCWelcomeViewController.swift */,
+			);
+			path = WelcomeView;
 			sourceTree = "<group>";
 		};
 		22B7D1CF216876B4004C4E07 /* UserNotify */ = {
@@ -320,9 +352,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				226F6817215BC13100F26441 /* LaunchScreen.storyboard in Resources */,
+				229F5C31216F257F00C8A99F /* WelcomeView.storyboard in Resources */,
+				22857DFB216C52B8004AA2EF /* Launch Screen.storyboard in Resources */,
+				22857DFC216C537C004AA2EF /* Assets.xcassets in Resources */,
 				226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */,
-				226F6814215BC13100F26441 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +427,9 @@
 			files = (
 				226F510C2161A525006E1DC6 /* BaseView.json in Sources */,
 				22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */,
+				22857E01216CEFD0004AA2EF /* DZCCollectionViewController.swift in Sources */,
 				226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */,
+				229F5C2F216F22FD00C8A99F /* DZCWelcomeViewController.swift in Sources */,
 				22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */,
 				22D00892215DC1FD003C771A /* DZCTestViewController.swift in Sources */,
 				226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */,
@@ -410,7 +445,6 @@
 				226F682D215BC7F500F26441 /* DZCNavigationController.swift in Sources */,
 				22B7D1D1216876D2004C4E07 /* UserNotify.swift in Sources */,
 				22B7D1D32168C13E004C4E07 /* DZCWebView.swift in Sources */,
-				226F682B215BC7C200F26441 /* DZCTabBarViewController.swift in Sources */,
 				226F6835215BC89500F26441 /* DZCMessageViewController.swift in Sources */,
 				226A7ACC215F0C760048ADCA /* UIButton+Image.swift in Sources */,
 				226F6829215BC77100F26441 /* DZCMainViewController.swift in Sources */,
@@ -552,7 +586,7 @@
 			baseConfigurationReference = DE871C28D444CF3CDD6609C0 /* Pods-DZCWeibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U62LQ53T;
 				INFOPLIST_FILE = DZCWeibo/Info.plist;
@@ -573,7 +607,7 @@
 			baseConfigurationReference = CE53C13DCD0946B6E0DE1E0E /* Pods-DZCWeibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U62LQ53T;
 				INFOPLIST_FILE = DZCWeibo/Info.plist;

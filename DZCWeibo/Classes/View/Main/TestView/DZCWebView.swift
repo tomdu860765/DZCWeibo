@@ -10,6 +10,9 @@ import UIKit
 import SVProgressHUD
 import WebKit
 class DZCWebView: UIViewController {
+
+    let urlstr = "https://open.weibo.cn/oauth2/authorize?client_id=\(userid)&redirect_uri=\(useruri)&display=mobile"
+   
     
     private lazy var webview=WKWebView()
     
@@ -31,7 +34,7 @@ class DZCWebView: UIViewController {
         
         webview.navigationDelegate=self
         
-        let urlstr = "https://open.weibo.cn/oauth2/authorize?client_id=\(userid)&redirect_uri=\(useruri)&display=mobile"
+        
         guard let url = URL(string: urlstr) else
         {
             return
