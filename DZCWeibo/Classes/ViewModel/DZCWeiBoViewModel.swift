@@ -7,12 +7,12 @@
 //
 
 import Foundation
-
-private let Max_count=3
+//最高微博刷新次数
+private let Max_count=5
 
 class WeiBoListArrayModel {
     //定义数组模型懒加载
-    lazy var  listarray=[DZCWeiboModel]()
+    lazy var  listarray=[DZCDetalisViewModel]()
     //限制刷新次数
     private  var refrashcount = 0
     
@@ -24,26 +24,36 @@ class WeiBoListArrayModel {
             return
         }
         
-        let since_id = ispull==true ? 0 : (listarray.first?.id ?? 0)
-        let  max_id = ispull==false ? 0 : (listarray.last?.id ?? 0)
+        let since_id = ispull==true ? 0 : (listarray.first?.weibomodel.id ?? 0)
+        let  max_id = ispull==false ? 0 : (listarray.last?.weibomodel.id ?? 0)
         DZCNetWorkManager.DefaultNetWork.WeiBoRequest(since_id: since_id, max_id: max_id) { (jsonarray, issuccess) in
             
-            guard  let array = NSArray.yy_modelArray(with: DZCWeiboModel.self, json: jsonarray ?? []) as? [DZCWeiboModel]
-                else{
-                    completion(false,false)
-                    return}
-            print("刷新了\(array.count)条")
+            if  issuccess == false{
+                completion(false,false)
+                return
+            }
+            var viewmodelarray = [DZCDetalisViewModel]()
             
+            for dict in jsonarray ?? []{
+                
+                guard let modelview = DZCWeiboModel.yy_model(with: dict) else{
+                    continue
+                }
+                
+                viewmodelarray.append(DZCDetalisViewModel.init(model: modelview))
+                
+            }
+           
             if ispull{
-                self.listarray+=array
+                self.listarray+=viewmodelarray
                 self.refrashcount+=1
             }else
             {
-                self.listarray=array+self.listarray
+                self.listarray=viewmodelarray+self.listarray
                 self.refrashcount+=1
                 
             }
-            if ispull && array.count==0{
+            if ispull && viewmodelarray.count==0{
                 
                 self.refrashcount+=1
                 

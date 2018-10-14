@@ -30,8 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         return true
     }
 
-   
-  
+
 }
 extension AppDelegate{
     private func setdataForbaseVC(){
@@ -63,7 +62,7 @@ extension AppDelegate{
         }else
             
         {
-            //如果并非版本从欢迎页面进入
+            //如果并非新版本从欢迎页面进入
             let welcomevc=UIStoryboard.init(name:"WelcomeView" , bundle: .main).instantiateViewController(withIdentifier: "welcomesb")
             self.window?.rootViewController = welcomevc
             //self.window?.rootViewController=DZCMainViewController()

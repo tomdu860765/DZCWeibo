@@ -9,7 +9,7 @@
 import UIKit
 
 class DZCHomeViewController: DZCBaseViewController {
-  private lazy var viwemodel = WeiBoListArrayModel()
+    private lazy var viwemodel = WeiBoListArrayModel()
     
       override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +70,9 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
-       
-        cell.textLabel?.text=viwemodel.listarray[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath) as! DZCWeiboTableViewCell
+        cell.viewmodel=viwemodel.listarray[indexPath.row]
+      
        
         return cell
     }

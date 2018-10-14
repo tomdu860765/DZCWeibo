@@ -87,7 +87,7 @@ extension DZCMainViewController:UITabBarControllerDelegate{
             print("点击首页")
             let navvc = viewControllers?.first as! UINavigationController
             let vc = navvc.viewControllers.first as! DZCHomeViewController
-            vc.basevctableview?.setContentOffset(CGPoint.init(x: 0, y: -64), animated: true)
+            vc.basevctableview?.setContentOffset(CGPoint.init(x: 0, y:-(navvc.navigationBar.frame.origin.y) ), animated: true)
          
         }
         

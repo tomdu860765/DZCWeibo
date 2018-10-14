@@ -15,26 +15,26 @@ class DZCBaseViewController: UIViewController {
     let deviceH = UIScreen.main.bounds.size.height
     
     lazy var navbar=UINavigationItem()
-
+    
     //定义计时器
     var basevctableview:UITableView?
-   //定义tableview
+    //定义tableview
     var ispullup = false
     //标记上下拉状态
     var refresh :UIRefreshControl?
     //标记刷新状态
     var isrefresh = false
-   
+    
     //定义一个可变字典属性
     var visitordict : [String:String]?
     
     lazy var statusBar:UIView={
-        let view=UIView()
+        var view=UIView()
         if deviceH < 812{
-            view.frame=CGRect.zero
+            view.isHidden=true
         }else
         {
-         view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44)}
+            view.frame=CGRect(x: 0, y: 0, width: screenbounds.size.width, height: 44)}
         view.backgroundColor=UIColor.white
         return view
     }()
@@ -42,36 +42,37 @@ class DZCBaseViewController: UIViewController {
     lazy var mynaviBar:UINavigationBar={
         let bar=UINavigationBar()
         if deviceH < 812{
-           bar.frame = CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 44)
+            bar.frame = CGRect(x: 0, y: 0, width: screenbounds.size.width, height: 44)
         }
-        bar.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: 44)
+        bar.frame = CGRect(x: 0, y: 44, width: screenbounds.size.width, height: 44)
         bar.backgroundColor=UIColor.white
+        print(bar.frame)
         return bar
     }()
     
     lazy var navibtn:UIButton={
         let btn=UIButton()
-       btn.setTitle(DZCAccountModel.init().screen_name, for: .normal)
+        btn.setTitle(DZCAccountModel.init().screen_name, for: .normal)
         btn.setTitleColor(UIColor.black, for: .normal)
         btn.sizeToFit()
         return btn
     }()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(signinsuccess),
                                                name:NSNotification.Name(rawValue: UserSigninNotification) , object: nil)
-       
+        
         if (DZCNetWorkManager.DefaultNetWork.account.access_token) != nil
         {
-              self.setupTableview()
-             navbar.titleView=self.navibtn
-
+            self.setupTableview()
+            navbar.titleView=self.navibtn
+            
         }else{
-               self.setupVisitorView()
+            self.setupVisitorView()
         }
-
+        
         view.addSubview(statusBar)
         view.addSubview(mynaviBar)
         mynaviBar.items=[navbar]
@@ -86,9 +87,9 @@ class DZCBaseViewController: UIViewController {
         DispatchQueue.main.async {
             self.basevctableview?.reloadData()
         }
-       NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
-  
+    
     
     override var title: String?{
         
@@ -96,26 +97,30 @@ class DZCBaseViewController: UIViewController {
             navbar.title=title
         }
     }
+    //设置访客视图
     private func setupVisitorView(){
         let visitorview = DZCVistorView()
         
         visitorview.visitordictionary=self.visitordict
         
         view.insertSubview(visitorview, belowSubview: mynaviBar)
-       
+        
     }
-  private  func setupTableview(){
-        basevctableview=UITableView(frame: UIScreen.main.bounds, style:.plain)
-        basevctableview?.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
+    //设置tableview
+    private  func setupTableview(){
+        basevctableview=UITableView(frame:screenbounds, style:.plain)
+        let xib=UINib.init(nibName:"DZCWeiboTableViewCell", bundle: nil)
+        basevctableview?.register(xib, forCellReuseIdentifier: "cellid")
+        //  basevctableview?.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
         view.insertSubview(basevctableview!, belowSubview: mynaviBar)
         basevctableview?.showsVerticalScrollIndicator=false
-        basevctableview?.contentInsetAdjustmentBehavior = .never
-        basevctableview?.contentInset=UIEdgeInsets.init(top:mynaviBar.bounds.size.height+44 ,
+        basevctableview?.contentInsetAdjustmentBehavior = .automatic
+        basevctableview?.contentInset=UIEdgeInsets.init(top:mynaviBar.bounds.size.height ,
                                                         left: 0,
                                                         bottom:tabBarController?.tabBar.bounds.size.height ?? 0,
                                                         right: 0)
-        
-        
+        basevctableview?.separatorStyle = .none
+        basevctableview?.estimatedRowHeight=300
         refresh=UIRefreshControl()
         basevctableview?.addSubview(refresh!)
         self.basevctableview?.reloadData()

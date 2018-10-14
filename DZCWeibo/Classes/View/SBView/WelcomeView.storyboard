@@ -36,16 +36,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fA0-LW-H6F" firstAttribute="leading" secondItem="Ajn-pZ-tnS" secondAttribute="leading" constant="133" id="3al-ku-nSV"/>
-                            <constraint firstItem="PER-Se-zU9" firstAttribute="top" secondItem="51V-ke-VjH" secondAttribute="top" id="4XF-Iz-gth"/>
                             <constraint firstItem="xv9-ds-jgd" firstAttribute="leading" secondItem="Ajn-pZ-tnS" secondAttribute="leading" constant="145" id="6tP-y2-rxb"/>
                             <constraint firstItem="xv9-ds-jgd" firstAttribute="top" secondItem="Ajn-pZ-tnS" secondAttribute="top" constant="262" id="8Ei-q0-gQx"/>
+                            <constraint firstItem="PER-Se-zU9" firstAttribute="leading" secondItem="Ajn-pZ-tnS" secondAttribute="leading" id="BPR-8f-U0D"/>
+                            <constraint firstItem="PER-Se-zU9" firstAttribute="bottom" secondItem="Ajn-pZ-tnS" secondAttribute="bottom" id="UIJ-XX-gnU"/>
                             <constraint firstItem="Ajn-pZ-tnS" firstAttribute="trailing" secondItem="fA0-LW-H6F" secondAttribute="trailing" constant="133" id="eEa-wg-ak4"/>
+                            <constraint firstItem="PER-Se-zU9" firstAttribute="trailing" secondItem="Ajn-pZ-tnS" secondAttribute="trailing" id="iH5-Oo-Tyu"/>
                             <constraint firstItem="Ajn-pZ-tnS" firstAttribute="trailing" secondItem="xv9-ds-jgd" secondAttribute="trailing" constant="145" id="lqZ-SJ-TOL"/>
-                            <constraint firstItem="PER-Se-zU9" firstAttribute="leading" secondItem="Ajn-pZ-tnS" secondAttribute="leading" id="mHR-cC-1r9"/>
                             <constraint firstItem="Ajn-pZ-tnS" firstAttribute="bottom" secondItem="fA0-LW-H6F" secondAttribute="bottom" constant="157" id="opm-Cc-Gsc"/>
-                            <constraint firstItem="PER-Se-zU9" firstAttribute="bottom" secondItem="Ajn-pZ-tnS" secondAttribute="bottom" id="pPa-XB-sQ1"/>
                             <constraint firstItem="fA0-LW-H6F" firstAttribute="top" secondItem="xv9-ds-jgd" secondAttribute="bottom" constant="122" id="t8V-H1-XcW"/>
-                            <constraint firstItem="PER-Se-zU9" firstAttribute="trailing" secondItem="Ajn-pZ-tnS" secondAttribute="trailing" id="u3h-uS-qDU"/>
+                            <constraint firstItem="PER-Se-zU9" firstAttribute="top" secondItem="51V-ke-VjH" secondAttribute="top" id="y26-ah-iIJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ajn-pZ-tnS"/>
                     </view>

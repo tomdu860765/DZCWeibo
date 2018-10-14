@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2201728021650C500055B48A /* DZCNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201727F21650C500055B48A /* DZCNetWorkManager.swift */; };
 		22017282216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22017281216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift */; };
+		222AECB52172BC1900F871F7 /* DZCPicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222AECB42172BC1900F871F7 /* DZCPicModel.swift */; };
+		222AECB72172C20300F871F7 /* DZCWeiboPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */; };
 		226A7ACC215F0C760048ADCA /* UIButton+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A7ACB215F0C760048ADCA /* UIButton+Image.swift */; };
 		226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
 		226F510C2161A525006E1DC6 /* BaseView.json in Sources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
@@ -20,10 +22,12 @@
 		226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6832215BC88000F26441 /* DZCHomeViewController.swift */; };
 		226F6835215BC89500F26441 /* DZCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6834215BC89500F26441 /* DZCMessageViewController.swift */; };
 		226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */; };
+		227662A72172364D00735ED8 /* String+CutweiboString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227662A62172364D00735ED8 /* String+CutweiboString.swift */; };
 		22857DFB216C52B8004AA2EF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22857DFA216C52B8004AA2EF /* Launch Screen.storyboard */; };
 		22857DFC216C537C004AA2EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F6813215BC13100F26441 /* Assets.xcassets */; };
 		22857E01216CEFD0004AA2EF /* DZCCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22857E00216CEFD0004AA2EF /* DZCCollectionViewController.swift */; };
-		22921EF7215BF09900B947EB /* UIImage+ImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22921EF6215BF09900B947EB /* UIImage+ImageName.swift */; };
+		22921EF7215BF09900B947EB /* UIImage+URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22921EF6215BF09900B947EB /* UIImage+URLImage.swift */; };
+		2299F81121718596009DD2A6 /* UIImage+ImageRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2299F81021718596009DD2A6 /* UIImage+ImageRound.swift */; };
 		229F5C2F216F22FD00C8A99F /* DZCWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229F5C2E216F22FD00C8A99F /* DZCWelcomeViewController.swift */; };
 		229F5C31216F257F00C8A99F /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229F5C30216F257F00C8A99F /* WelcomeView.storyboard */; };
 		22B7D1D1216876D2004C4E07 /* UserNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D0216876D2004C4E07 /* UserNotify.swift */; };
@@ -32,6 +36,10 @@
 		22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */; };
 		22D00892215DC1FD003C771A /* DZCTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D00891215DC1FD003C771A /* DZCTestViewController.swift */; };
 		22D00894215DCC72003C771A /* UIBarButtonItem+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */; };
+		22D9055A21709AD8002A1D9A /* DZCWeiboTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9055821709AD8002A1D9A /* DZCWeiboTableViewCell.swift */; };
+		22D9055B21709AD8002A1D9A /* DZCWeiboTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D9055921709AD8002A1D9A /* DZCWeiboTableViewCell.xib */; };
+		22D9055D2170D239002A1D9A /* DZCWeiboDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9055C2170D239002A1D9A /* DZCWeiboDetailsModel.swift */; };
+		22D9055F2170E717002A1D9A /* DZCDetalisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9055E2170E717002A1D9A /* DZCDetalisViewModel.swift */; };
 		22DE3DAF2160EBD0007003E7 /* DZCVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE3DAE2160EBD0007003E7 /* DZCVistorView.swift */; };
 		22DE4156216A530F00070017 /* DZCAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE4155216A530F00070017 /* DZCAccountModel.swift */; };
 		A69508BBB7C19F7E7A0CF421 /* Pods_DZCWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D96F52BF93E8D206C28783A /* Pods_DZCWeibo.framework */; };
@@ -40,6 +48,8 @@
 /* Begin PBXFileReference section */
 		2201727F21650C500055B48A /* DZCNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCNetWorkManager.swift; sourceTree = "<group>"; };
 		22017281216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DZCNetWorkManager+JsonWeibo.swift"; sourceTree = "<group>"; };
+		222AECB42172BC1900F871F7 /* DZCPicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCPicModel.swift; sourceTree = "<group>"; };
+		222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboPicView.swift; sourceTree = "<group>"; };
 		226A7ACB215F0C760048ADCA /* UIButton+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Image.swift"; sourceTree = "<group>"; };
 		226F510A2161A4D9006E1DC6 /* BaseView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BaseView.json; sourceTree = "<group>"; };
 		226F6809215BC12D00F26441 /* DZCWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZCWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,9 +64,11 @@
 		226F6832215BC88000F26441 /* DZCHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCHomeViewController.swift; sourceTree = "<group>"; };
 		226F6834215BC89500F26441 /* DZCMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMessageViewController.swift; sourceTree = "<group>"; };
 		226F6836215BC8A500F26441 /* DZCMyinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCMyinfoViewController.swift; sourceTree = "<group>"; };
+		227662A62172364D00735ED8 /* String+CutweiboString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CutweiboString.swift"; sourceTree = "<group>"; };
 		22857DFA216C52B8004AA2EF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		22857E00216CEFD0004AA2EF /* DZCCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCCollectionViewController.swift; sourceTree = "<group>"; };
-		22921EF6215BF09900B947EB /* UIImage+ImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageName.swift"; sourceTree = "<group>"; };
+		22921EF6215BF09900B947EB /* UIImage+URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+URLImage.swift"; sourceTree = "<group>"; };
+		2299F81021718596009DD2A6 /* UIImage+ImageRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageRound.swift"; sourceTree = "<group>"; };
 		229F5C2E216F22FD00C8A99F /* DZCWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWelcomeViewController.swift; sourceTree = "<group>"; };
 		229F5C30216F257F00C8A99F /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
 		22B7D1D0216876D2004C4E07 /* UserNotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotify.swift; sourceTree = "<group>"; };
@@ -65,6 +77,10 @@
 		22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiBoViewModel.swift; sourceTree = "<group>"; };
 		22D00891215DC1FD003C771A /* DZCTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCTestViewController.swift; sourceTree = "<group>"; };
 		22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Custom.swift"; sourceTree = "<group>"; };
+		22D9055821709AD8002A1D9A /* DZCWeiboTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboTableViewCell.swift; sourceTree = "<group>"; };
+		22D9055921709AD8002A1D9A /* DZCWeiboTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DZCWeiboTableViewCell.xib; sourceTree = "<group>"; };
+		22D9055C2170D239002A1D9A /* DZCWeiboDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboDetailsModel.swift; sourceTree = "<group>"; };
+		22D9055E2170E717002A1D9A /* DZCDetalisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCDetalisViewModel.swift; sourceTree = "<group>"; };
 		22DE3DAE2160EBD0007003E7 /* DZCVistorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCVistorView.swift; sourceTree = "<group>"; };
 		22DE4155216A530F00070017 /* DZCAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCAccountModel.swift; sourceTree = "<group>"; };
 		4D96F52BF93E8D206C28783A /* Pods_DZCWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DZCWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +158,8 @@
 			children = (
 				22CA63462165B5CE000536AF /* DZCWeiboModel.swift */,
 				22DE4155216A530F00070017 /* DZCAccountModel.swift */,
+				22D9055C2170D239002A1D9A /* DZCWeiboDetailsModel.swift */,
+				222AECB42172BC1900F871F7 /* DZCPicModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +176,7 @@
 		226F6821215BC69D00F26441 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22D9055721709AB6002A1D9A /* DZCWeiboCell */,
 				22857DF6216C4BD6004AA2EF /* SBView */,
 				226F6824215BC69D00F26441 /* Main */,
 				226F6822215BC69D00F26441 /* Discover */,
@@ -217,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */,
+				22D9055E2170E717002A1D9A /* DZCDetalisViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,9 +261,11 @@
 		22921EF5215BF06800B947EB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				22921EF6215BF09900B947EB /* UIImage+ImageName.swift */,
+				22921EF6215BF09900B947EB /* UIImage+URLImage.swift */,
+				2299F81021718596009DD2A6 /* UIImage+ImageRound.swift */,
 				22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */,
 				226A7ACB215F0C760048ADCA /* UIButton+Image.swift */,
+				227662A62172364D00735ED8 /* String+CutweiboString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -272,6 +294,16 @@
 				22B7D1D22168C13E004C4E07 /* DZCWebView.swift */,
 			);
 			path = TestView;
+			sourceTree = "<group>";
+		};
+		22D9055721709AB6002A1D9A /* DZCWeiboCell */ = {
+			isa = PBXGroup;
+			children = (
+				22D9055821709AD8002A1D9A /* DZCWeiboTableViewCell.swift */,
+				22D9055921709AD8002A1D9A /* DZCWeiboTableViewCell.xib */,
+				222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */,
+			);
+			path = DZCWeiboCell;
 			sourceTree = "<group>";
 		};
 		6E1432AAA72DA84942C57943 /* Pods */ = {
@@ -353,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				229F5C31216F257F00C8A99F /* WelcomeView.storyboard in Resources */,
+				22D9055B21709AD8002A1D9A /* DZCWeiboTableViewCell.xib in Resources */,
 				22857DFB216C52B8004AA2EF /* Launch Screen.storyboard in Resources */,
 				22857DFC216C537C004AA2EF /* Assets.xcassets in Resources */,
 				226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */,
@@ -430,20 +463,27 @@
 				22857E01216CEFD0004AA2EF /* DZCCollectionViewController.swift in Sources */,
 				226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */,
 				229F5C2F216F22FD00C8A99F /* DZCWelcomeViewController.swift in Sources */,
+				2299F81121718596009DD2A6 /* UIImage+ImageRound.swift in Sources */,
 				22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */,
 				22D00892215DC1FD003C771A /* DZCTestViewController.swift in Sources */,
 				226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */,
 				22D00894215DCC72003C771A /* UIBarButtonItem+Custom.swift in Sources */,
-				22921EF7215BF09900B947EB /* UIImage+ImageName.swift in Sources */,
+				22921EF7215BF09900B947EB /* UIImage+URLImage.swift in Sources */,
 				22DE3DAF2160EBD0007003E7 /* DZCVistorView.swift in Sources */,
 				226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */,
 				2201728021650C500055B48A /* DZCNetWorkManager.swift in Sources */,
 				226F682F215BC80900F26441 /* DZCBaseViewController.swift in Sources */,
 				22017282216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift in Sources */,
+				222AECB72172C20300F871F7 /* DZCWeiboPicView.swift in Sources */,
+				22D9055F2170E717002A1D9A /* DZCDetalisViewModel.swift in Sources */,
+				227662A72172364D00735ED8 /* String+CutweiboString.swift in Sources */,
 				22DE4156216A530F00070017 /* DZCAccountModel.swift in Sources */,
+				22D9055A21709AD8002A1D9A /* DZCWeiboTableViewCell.swift in Sources */,
+				222AECB52172BC1900F871F7 /* DZCPicModel.swift in Sources */,
 				226F6831215BC86E00F26441 /* DZCDiscoverController.swift in Sources */,
 				226F682D215BC7F500F26441 /* DZCNavigationController.swift in Sources */,
 				22B7D1D1216876D2004C4E07 /* UserNotify.swift in Sources */,
+				22D9055D2170D239002A1D9A /* DZCWeiboDetailsModel.swift in Sources */,
 				22B7D1D32168C13E004C4E07 /* DZCWebView.swift in Sources */,
 				226F6835215BC89500F26441 /* DZCMessageViewController.swift in Sources */,
 				226A7ACC215F0C760048ADCA /* UIButton+Image.swift in Sources */,
