@@ -23,6 +23,7 @@ extension UIImage{
         //先填充背景色,再截图
         path.addClip()
         draw(in: rect)
+       
         //画线
         UIColor.black.setStroke()
         path.lineWidth=2

@@ -26,8 +26,12 @@ class DZCWeiboModel: NSObject {
     var comments_count : Int = 0
     // 表态数
     var  attitudes_count  : Int = 0
-    
+    //图片数组
     var   pic_urls : [DZCPicModel]?
+    //转发微博数组
+    
+    var retweeted_status : DZCWeiboModel?
+    
     
     //微博创建时间
     var created_at : String?

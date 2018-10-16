@@ -12,6 +12,7 @@
 		222AECB52172BC1900F871F7 /* DZCPicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222AECB42172BC1900F871F7 /* DZCPicModel.swift */; };
 		222AECB72172C20300F871F7 /* DZCWeiboPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */; };
 		226A7ACC215F0C760048ADCA /* UIButton+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A7ACB215F0C760048ADCA /* UIButton+Image.swift */; };
+		226F44482174D60800E2953D /* DZCWeiboRepostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226F44472174D60800E2953D /* DZCWeiboRepostTableViewCell.xib */; };
 		226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
 		226F510C2161A525006E1DC6 /* BaseView.json in Sources */ = {isa = PBXBuildFile; fileRef = 226F510A2161A4D9006E1DC6 /* BaseView.json */; };
 		226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F680C215BC12D00F26441 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		222AECB42172BC1900F871F7 /* DZCPicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCPicModel.swift; sourceTree = "<group>"; };
 		222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboPicView.swift; sourceTree = "<group>"; };
 		226A7ACB215F0C760048ADCA /* UIButton+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Image.swift"; sourceTree = "<group>"; };
+		226F44472174D60800E2953D /* DZCWeiboRepostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DZCWeiboRepostTableViewCell.xib; sourceTree = "<group>"; };
 		226F510A2161A4D9006E1DC6 /* BaseView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BaseView.json; sourceTree = "<group>"; };
 		226F6809215BC12D00F26441 /* DZCWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZCWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F680C215BC12D00F26441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				22D9055821709AD8002A1D9A /* DZCWeiboTableViewCell.swift */,
 				22D9055921709AD8002A1D9A /* DZCWeiboTableViewCell.xib */,
+				226F44472174D60800E2953D /* DZCWeiboRepostTableViewCell.xib */,
 				222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */,
 			);
 			path = DZCWeiboCell;
@@ -387,6 +390,7 @@
 				229F5C31216F257F00C8A99F /* WelcomeView.storyboard in Resources */,
 				22D9055B21709AD8002A1D9A /* DZCWeiboTableViewCell.xib in Resources */,
 				22857DFB216C52B8004AA2EF /* Launch Screen.storyboard in Resources */,
+				226F44482174D60800E2953D /* DZCWeiboRepostTableViewCell.xib in Resources */,
 				22857DFC216C537C004AA2EF /* Assets.xcassets in Resources */,
 				226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */,
 			);

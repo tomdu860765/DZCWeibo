@@ -42,31 +42,36 @@ extension DZCNetWorkManager{
         
         
         NetWeiboHomeInfo(Method:NetWorkWays.POST, URLString:codepath, Token: tokendictpost) { (json, issuccess) in
-           
+            
            //字典转模型
-            self.account.yy_modelSet(withJSON: json as Any )
-           
-            //保存模型
-            self.account.saveaccount()
-            self.usernameandpic()
+            self.account.yy_modelSet(withJSON: json as? [String:AnyObject] ?? [:] )
+          
+            
+            self.usernameandpic(completion: { (json) in
+                self.account.yy_modelSet(with: json)
+                
+                //保存模型
+                self.account.saveaccount()
+               // print(self.account)
+                  completion(issuccess)
+                
+            })
         
-            completion(issuccess)
-        }
+                 }
         
     }
     
- private   func usernameandpic() {
+    private   func usernameandpic(completion:@escaping (([String:AnyObject])->())) {
         let url = "https://api.weibo.com/2/users/show.json"
         let tokeninfo = ["uid":account.uid,"access_token":account.access_token]
-        print(tokeninfo)
+    
         tokenrequest(Method: .GET, URLString: url, Token: tokeninfo as! [String : String] ) { (infojson, issuccess) in
+   
             if issuccess==true
-            {self.account.yy_modelSet(withJSON: infojson as Any)
-             print("把姓名和头像写入模型")
-            }else
             {
-                print("连接错误获取json失败")
+                completion(infojson as?[String:AnyObject] ?? [:])
             }
+    
             
         }
         

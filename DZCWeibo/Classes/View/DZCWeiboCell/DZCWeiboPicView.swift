@@ -9,6 +9,41 @@
 import UIKit
 
 class DZCWeiboPicView: UIView {
+   
+@IBOutlet weak var viewhight: NSLayoutConstraint!
+    
+    var viewmodelpic : DZCDetalisViewModel?{
+        
+        didSet{
+            setpcihight()
+        }
+    }
+    private func setpcihight(){
+    
+        if viewmodelpic?.imageurls?.count == 1{
+            let itemview = viewmodelpic?.picsize ?? CGSize()
+            let subview = subviews.first
+            subview?.frame=CGRect(x: 0, y: outtermargin,
+                                  width: itemview.width,
+                                  height: itemview.height)
+            
+        }
+        
+        else{
+            let subview = subviews.first
+            subview?.frame=CGRect(x: 0, y: outtermargin,
+                                  width: itemviewwidth,
+                                  height: itemviewwidth)
+            
+            
+        }
+        
+        
+      viewhight.constant=viewmodelpic?.picsize.height ?? 0
+    
+    }
+    
+    
     
     var picurl:[DZCPicModel]?{
         
@@ -52,7 +87,7 @@ extension DZCWeiboPicView{
         
         for i in 0..<count*count {
             let view = UIImageView()
-            view.backgroundColor=UIColor.orange
+            view.backgroundColor=UIColor.white
             //行
             let col = CGFloat(i/count)
             //列

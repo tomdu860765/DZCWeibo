@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SDWebImage
 //最高微博刷新次数
 private let Max_count=5
 
@@ -43,7 +44,7 @@ class WeiBoListArrayModel {
                 viewmodelarray.append(DZCDetalisViewModel.init(model: modelview))
                 
             }
-           
+          // print(viewmodelarray as Any)
             if ispull{
                 self.listarray+=viewmodelarray
                 self.refrashcount+=1
@@ -59,12 +60,47 @@ class WeiBoListArrayModel {
                 
             }
             
-            completion(true,true)
-            
+           self.cachesignpic(modelpics: viewmodelarray, didfinish: completion)
         }
+        
+     
+        
         
     }
     
+    private func cachesignpic(modelpics:[DZCDetalisViewModel],didfinish:@escaping ((Bool,_ Morerefash:Bool)->())){
+        let group = DispatchGroup()
+        
+        
+        for picsmodel in modelpics {
+            if  picsmodel.imageurls?.count != 1{
+                continue
+            }
+            guard  let firstpicurl = picsmodel.imageurls?.first?.thumbnail_pic,
+                   let picurl = URL.init(string: firstpicurl)else{
+                    continue
+            }
+            group.enter()
+            SDWebImageManager.shared().imageDownloader?.downloadImage(with: picurl, options: [], progress: nil, completed: { (image, _, _, _) in
+                guard let image = image else{
+                    
+                    return
+                }
+                picsmodel.updatapic(pic: image )
+               
+                group.leave()
+            })
+            group.notify(queue: DispatchQueue.main) {
+                didfinish(true,true)
+                print("完成下载图片")
+            }
+            
+        }
+      
+        
+        
+        
+    }
     
     
     

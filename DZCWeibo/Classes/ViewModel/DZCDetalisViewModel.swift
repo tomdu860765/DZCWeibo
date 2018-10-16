@@ -26,6 +26,13 @@ class DZCDetalisViewModel:CustomStringConvertible {
     
     var vipicon : UIImage?
     
+    var imageurls : [DZCPicModel]?{
+        
+        return weibomodel.retweeted_status?.pic_urls  ?? weibomodel.pic_urls
+    }
+    var retweetedtext :String?
+    
+    
     
     init(model:DZCWeiboModel) {
         
@@ -57,14 +64,17 @@ class DZCDetalisViewModel:CustomStringConvertible {
         }
         //创建时间处理
         //print(weibomodel.created_at as Any)
-        
-        
-        
+ 
         recount = btncount(count:weibomodel.reposts_count)
         comcount = btncount(count: weibomodel.comments_count)
         likecount = btncount(count: weibomodel.attitudes_count)
         
-        picsize=piccountsize(piccount: weibomodel.pic_urls?.count ?? 0)
+        picsize=piccountsize(piccount: imageurls?.count ?? 0)
+        
+        retweetedtext = "@" + (weibomodel.user?.screen_name ?? " ") + (weibomodel.retweeted_status?.text ?? " ")
+        
+        
+        
     }
     
  private   func btncount(count:Int,defaultstr:String="") -> String {
@@ -74,12 +84,9 @@ class DZCDetalisViewModel:CustomStringConvertible {
         if count<10000 {
             return count.description
         }
+    
         
-        
-        
-        return (count/10000).description
-        
-        
+        return (count/10000).description+"万"
     }
     
     private func piccountsize(piccount:Int)->CGSize{
@@ -104,7 +111,13 @@ class DZCDetalisViewModel:CustomStringConvertible {
     }
     
     
-    
+    func updatapic(pic:UIImage){
+        var size = pic.size
+        size.height += outtermargin
+        
+        picsize = size
+        
+    }
     
 
 }

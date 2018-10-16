@@ -31,7 +31,7 @@ class DZCBaseViewController: UIViewController {
     lazy var statusBar:UIView={
         var view=UIView()
         if deviceH < 812{
-            view.isHidden=true
+            view.frame=CGRect(x: 0, y: 0, width: screenbounds.size.width, height: 20)
         }else
         {
             view.frame=CGRect(x: 0, y: 0, width: screenbounds.size.width, height: 44)}
@@ -42,11 +42,13 @@ class DZCBaseViewController: UIViewController {
     lazy var mynaviBar:UINavigationBar={
         let bar=UINavigationBar()
         if deviceH < 812{
-            bar.frame = CGRect(x: 0, y: 0, width: screenbounds.size.width, height: 44)
-        }
+            bar.frame = CGRect(x: 0, y: 20, width: screenbounds.size.width, height: 44)
+        }else{
         bar.frame = CGRect(x: 0, y: 44, width: screenbounds.size.width, height: 44)
+            }
         bar.backgroundColor=UIColor.white
         print(bar.frame)
+        print(screenbounds.size.height)
         return bar
     }()
     
@@ -109,9 +111,12 @@ class DZCBaseViewController: UIViewController {
     //设置tableview
     private  func setupTableview(){
         basevctableview=UITableView(frame:screenbounds, style:.plain)
-        let xib=UINib.init(nibName:"DZCWeiboTableViewCell", bundle: nil)
+        let  xib=UINib.init(nibName:"DZCWeiboTableViewCell", bundle: nil)
+        let repostxib=UINib.init(nibName: "DZCWeiboRepostTableViewCell", bundle: nil)
         basevctableview?.register(xib, forCellReuseIdentifier: "cellid")
-        //  basevctableview?.register(UITableViewCell.self, forCellReuseIdentifier: "cellid")
+        basevctableview?.register(repostxib, forCellReuseIdentifier: "repostid")
+        
+        
         view.insertSubview(basevctableview!, belowSubview: mynaviBar)
         basevctableview?.showsVerticalScrollIndicator=false
         basevctableview?.contentInsetAdjustmentBehavior = .automatic

@@ -69,10 +69,16 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
     }
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cellid = ""
+        if viwemodel.listarray[indexPath.row].weibomodel.retweeted_status==nil {
+            cellid = "cellid"
+        }else{
+            cellid = "repostid"
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath) as! DZCWeiboTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:cellid , for: indexPath) as! DZCWeiboTableViewCell
         cell.viewmodel=viwemodel.listarray[indexPath.row]
-      
+        
        
         return cell
     }

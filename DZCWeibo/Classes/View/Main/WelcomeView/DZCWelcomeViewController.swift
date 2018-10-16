@@ -16,7 +16,8 @@ class DZCWelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setheadimage()
+         setheadimage()
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -25,6 +26,7 @@ class DZCWelcomeViewController: UIViewController {
         
         self.movelabel()
         
+       
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
             self.showlabel()
         }
@@ -43,9 +45,12 @@ class DZCWelcomeViewController: UIViewController {
 extension DZCWelcomeViewController{
     
     private   func setheadimage()  {
+        
+        
+        
         guard     let modelstr = DZCNetWorkManager.DefaultNetWork.account.avatar_large,
             let urlpic = URL(string: modelstr ) else{
-                
+               
                 return
         }
         imageview.contentMode = .scaleAspectFit

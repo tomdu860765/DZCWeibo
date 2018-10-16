@@ -35,15 +35,21 @@ class DZCWeiboTableViewCell: UITableViewCell {
             
             attitudesbtn.setTitle(viewmodel?.likecount, for: .normal)
            
-            viewhight.constant=viewmodel?.picsize.height ?? 0
+           
             
-            imageview.picurl=viewmodel?.weibomodel.pic_urls
+            imageview.viewmodelpic = viewmodel
+
+            imageview.picurl=viewmodel?.imageurls
             
             vipicon.image=viewmodel?.vipicon
+            
+            repostlabel?.text=viewmodel?.retweetedtext
+            
         }
         
         
     }
+    @IBOutlet weak var repostlabel: UILabel?
     @IBOutlet weak var vipicon: UIImageView!
     @IBOutlet weak var imageview: DZCWeiboPicView!
     @IBOutlet weak var repostsbtn: UIButton!

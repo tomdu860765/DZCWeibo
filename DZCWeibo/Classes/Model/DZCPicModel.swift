@@ -9,11 +9,9 @@
 import UIKit
 @objcMembers
 class DZCPicModel: NSObject {
-
+//缩略图
     var thumbnail_pic : String?
-    
-    
-    
+
     override var description: String{
         
         return yy_modelDescription()
