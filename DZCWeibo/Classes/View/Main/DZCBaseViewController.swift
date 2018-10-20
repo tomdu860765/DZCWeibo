@@ -126,6 +126,7 @@ class DZCBaseViewController: UIViewController {
                                                         right: 0)
         basevctableview?.separatorStyle = .none
         basevctableview?.estimatedRowHeight=300
+        
         refresh=UIRefreshControl()
         basevctableview?.addSubview(refresh!)
         self.basevctableview?.reloadData()

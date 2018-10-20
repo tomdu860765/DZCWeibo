@@ -97,4 +97,11 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
         }
 
 }
+    
+  func  tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let  modelarray = viwemodel.listarray[indexPath.row]
+       
+        return modelarray.weibocellheight
+    }
+    
 }

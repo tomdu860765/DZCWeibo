@@ -10,6 +10,10 @@ import UIKit
 
 extension UIImage{
     
+    
+    
+    
+    
     func ImageRoundCut(size:CGSize,backcolor:UIColor=UIColor.white) -> UIImage {
         let rect = CGRect(origin: CGPoint.init(), size: size)
         UIGraphicsBeginImageContextWithOptions(size,true,0)
@@ -30,10 +34,10 @@ extension UIImage{
         path.stroke()
         
         let result = UIGraphicsGetImageFromCurrentImageContext()
-        
-        
+
         
         UIGraphicsEndImageContext()
+      
         
         return result!
     }

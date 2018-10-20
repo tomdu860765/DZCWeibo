@@ -35,6 +35,7 @@
 		22B7D1D32168C13E004C4E07 /* DZCWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D22168C13E004C4E07 /* DZCWebView.swift */; };
 		22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63462165B5CE000536AF /* DZCWeiboModel.swift */; };
 		22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */; };
+		22CE78C7217AD5F400BCA518 /* DZCRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CE78C6217AD5F400BCA518 /* DZCRefreshControl.swift */; };
 		22D00892215DC1FD003C771A /* DZCTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D00891215DC1FD003C771A /* DZCTestViewController.swift */; };
 		22D00894215DCC72003C771A /* UIBarButtonItem+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */; };
 		22D9055A21709AD8002A1D9A /* DZCWeiboTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9055821709AD8002A1D9A /* DZCWeiboTableViewCell.swift */; };
@@ -77,6 +78,7 @@
 		22B7D1D22168C13E004C4E07 /* DZCWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWebView.swift; sourceTree = "<group>"; };
 		22CA63462165B5CE000536AF /* DZCWeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboModel.swift; sourceTree = "<group>"; };
 		22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiBoViewModel.swift; sourceTree = "<group>"; };
+		22CE78C6217AD5F400BCA518 /* DZCRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCRefreshControl.swift; sourceTree = "<group>"; };
 		22D00891215DC1FD003C771A /* DZCTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCTestViewController.swift; sourceTree = "<group>"; };
 		22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Custom.swift"; sourceTree = "<group>"; };
 		22D9055821709AD8002A1D9A /* DZCWeiboTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboTableViewCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		226F6821215BC69D00F26441 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22CE78C5217AD5C900BCA518 /* RefreshControl */,
 				22D9055721709AB6002A1D9A /* DZCWeiboCell */,
 				22857DF6216C4BD6004AA2EF /* SBView */,
 				226F6824215BC69D00F26441 /* Main */,
@@ -286,6 +289,14 @@
 				22B7D1D0216876D2004C4E07 /* UserNotify.swift */,
 			);
 			path = UserNotify;
+			sourceTree = "<group>";
+		};
+		22CE78C5217AD5C900BCA518 /* RefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				22CE78C6217AD5F400BCA518 /* DZCRefreshControl.swift */,
+			);
+			path = RefreshControl;
 			sourceTree = "<group>";
 		};
 		22D00890215DC105003C771A /* TestView */ = {
@@ -472,6 +483,7 @@
 				22D00892215DC1FD003C771A /* DZCTestViewController.swift in Sources */,
 				226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */,
 				22D00894215DCC72003C771A /* UIBarButtonItem+Custom.swift in Sources */,
+				22CE78C7217AD5F400BCA518 /* DZCRefreshControl.swift in Sources */,
 				22921EF7215BF09900B947EB /* UIImage+URLImage.swift in Sources */,
 				22DE3DAF2160EBD0007003E7 /* DZCVistorView.swift in Sources */,
 				226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */,

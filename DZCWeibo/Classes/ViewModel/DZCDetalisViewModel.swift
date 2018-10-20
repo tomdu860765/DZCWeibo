@@ -31,7 +31,8 @@ class DZCDetalisViewModel:CustomStringConvertible {
         return weibomodel.retweeted_status?.pic_urls  ?? weibomodel.pic_urls
     }
     var retweetedtext :String?
-    
+    //计算行高
+    var weibocellheight : CGFloat=0
     
     
     init(model:DZCWeiboModel) {
@@ -74,7 +75,7 @@ class DZCDetalisViewModel:CustomStringConvertible {
         retweetedtext = "@" + (weibomodel.user?.screen_name ?? " ") + (weibomodel.retweeted_status?.text ?? " ")
         
         
-        
+        updataheight()
     }
     
  private   func btncount(count:Int,defaultstr:String="") -> String {
@@ -109,7 +110,42 @@ class DZCDetalisViewModel:CustomStringConvertible {
         return weibomodel.description
         
     }
-    
+    func updataheight()  {
+        let margin = CGFloat(12)
+        let iconheight = CGFloat(34)
+        let toolbarheight = CGFloat (35)
+        var height = CGFloat (0)
+        //顶部距离
+        height = 3*margin+iconheight
+        //cell的视图大小测算
+        let viewsize = CGSize.init(width: screenbounds.width-2*margin, height:CGFloat(MAXFLOAT))
+        
+        //微博文本大小
+        if let text=weibomodel.text {
+        
+        height += (text as NSString).boundingRect(with: viewsize, options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                              attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15)],
+                                    context: nil).height
+            
+        }
+        //转发微博高度
+        if  weibomodel.retweeted_status != nil{
+            
+            height += 2*margin
+            if let text = weibomodel.retweeted_status?.text{
+            height += (text as NSString).boundingRect(with: viewsize, options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                                                           attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)],
+                                                                           context: nil).height}
+        }
+        //加上图片高度
+        height += picsize.height
+        
+        height += margin
+        
+        height += toolbarheight
+        
+        weibocellheight = height
+    }
     
     func updatapic(pic:UIImage){
         var size = pic.size
@@ -117,6 +153,7 @@ class DZCDetalisViewModel:CustomStringConvertible {
         
         picsize = size
         
+        updataheight()
     }
     
 

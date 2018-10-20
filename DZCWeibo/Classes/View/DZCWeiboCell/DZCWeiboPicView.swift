@@ -16,6 +16,7 @@ class DZCWeiboPicView: UIView {
         
         didSet{
             setpcihight()
+            picurl = viewmodelpic?.imageurls
         }
     }
     private func setpcihight(){
@@ -45,7 +46,7 @@ class DZCWeiboPicView: UIView {
     
     
     
-    var picurl:[DZCPicModel]?{
+  private  var picurl:[DZCPicModel]?{
         
         didSet{
             for subview in subviews {

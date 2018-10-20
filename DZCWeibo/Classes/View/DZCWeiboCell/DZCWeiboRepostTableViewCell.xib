@@ -55,7 +55,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUS-UG-aSQ">
-                        <rect key="frame" x="11" y="54" width="37.5" height="18"/>
+                        <rect key="frame" x="11" y="54" width="37.5" height="56.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -101,16 +101,17 @@
                         <rect key="frame" x="144.5" y="505.5" width="1" height="28"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGa-0e-dwz">
-                        <rect key="frame" x="0.0" y="84" width="420" height="421.5"/>
+                        <rect key="frame" x="0.0" y="122.5" width="420" height="383"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-Al-4LR">
-                        <rect key="frame" x="11" y="96" width="37.5" height="18"/>
+                        <rect key="frame" x="11" y="134.5" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdf-Io-PAH" customClass="DZCWeiboPicView" customModule="DZCWeibo" customModuleProvider="target">
-                        <rect key="frame" x="11" y="114" width="397" height="341"/>
+                        <rect key="frame" x="11" y="152.5" width="397" height="341"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="341" id="peW-7g-wZ5"/>
                         </constraints>
@@ -154,7 +155,7 @@
                     <constraint firstItem="lGa-0e-dwz" firstAttribute="leading" secondItem="a66-xt-8OX" secondAttribute="leading" id="Z9o-m5-ggb"/>
                     <constraint firstItem="6Bx-RM-dUb" firstAttribute="leading" secondItem="KYl-s8-vJQ" secondAttribute="trailing" id="ass-Pb-T2g"/>
                     <constraint firstItem="xKH-lc-dby" firstAttribute="centerY" secondItem="KYl-s8-vJQ" secondAttribute="centerY" id="bHY-BE-1CD"/>
-                    <constraint firstItem="J3h-UN-rs3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Zdf-Io-PAH" secondAttribute="bottom" constant="12" id="blw-FF-Obo"/>
+                    <constraint firstItem="J3h-UN-rs3" firstAttribute="top" secondItem="Zdf-Io-PAH" secondAttribute="bottom" constant="12" id="blw-FF-Obo"/>
                     <constraint firstAttribute="trailing" secondItem="6Bx-RM-dUb" secondAttribute="trailing" id="cjG-PI-WpJ"/>
                     <constraint firstAttribute="bottom" secondItem="J3h-UN-rs3" secondAttribute="bottom" id="cjq-5j-Bqd"/>
                     <constraint firstAttribute="bottom" secondItem="xKH-lc-dby" secondAttribute="bottom" id="gKI-JF-4JW"/>
