@@ -31,9 +31,13 @@ class DZCRefreashview: UIView {
                 
                 
             case .stop : titlelabel.text="放手刷新"
-            loadview.isHidden=false
-            loadimageview.isHidden=true
-            loadview.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
+                self.loadview.isHidden=false
+                self.loadimageview.isHidden=true
+                self.loadview.startAnimating()
+
+            }
+           
             }
         }
         

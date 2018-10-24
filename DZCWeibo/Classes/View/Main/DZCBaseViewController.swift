@@ -12,7 +12,7 @@ import YYModel
 import SDWebImage
 class DZCBaseViewController: UIViewController {
     //判断设备高度
-    let deviceH = UIScreen.main.bounds.size.height
+    let deviceH = screenbounds.height
     
     lazy var navbar=UINavigationItem()
     
@@ -47,8 +47,7 @@ class DZCBaseViewController: UIViewController {
         bar.frame = CGRect(x: 0, y: 44, width: screenbounds.size.width, height: 44)
             }
         bar.backgroundColor=UIColor.white
-        print(bar.frame)
-        print(screenbounds.size.height)
+      
         return bar
     }()
     
@@ -65,7 +64,8 @@ class DZCBaseViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(signinsuccess),
                                                name:NSNotification.Name(rawValue: UserSigninNotification) , object: nil)
-        
+         basevctableview?.contentInsetAdjustmentBehavior  = .automatic
+     
         if (DZCNetWorkManager.DefaultNetWork.account.access_token) != nil
         {
             self.setupTableview()
@@ -74,7 +74,7 @@ class DZCBaseViewController: UIViewController {
         }else{
             self.setupVisitorView()
         }
-        
+        edgesForExtendedLayout = UIRectEdge.all
         view.addSubview(statusBar)
         view.addSubview(mynaviBar)
         mynaviBar.items=[navbar]
@@ -100,7 +100,7 @@ class DZCBaseViewController: UIViewController {
         }
     }
     //设置访客视图
-    private func setupVisitorView(){
+ private  func setupVisitorView(){
         let visitorview = DZCVistorView()
         
         visitorview.visitordictionary=self.visitordict
@@ -110,25 +110,28 @@ class DZCBaseViewController: UIViewController {
     }
     //设置tableview
     private  func setupTableview(){
-        basevctableview=UITableView(frame:screenbounds, style:.plain)
+       let frame=CGRect(x: 0, y: 88, width: screenbounds.width, height: screenbounds.height-88)
+        basevctableview=UITableView(frame:frame, style:.plain)
+        
         let  xib=UINib.init(nibName:"DZCWeiboTableViewCell", bundle: nil)
         let repostxib=UINib.init(nibName: "DZCWeiboRepostTableViewCell", bundle: nil)
         basevctableview?.register(xib, forCellReuseIdentifier: "cellid")
         basevctableview?.register(repostxib, forCellReuseIdentifier: "repostid")
         
-        
+    
         view.insertSubview(basevctableview!, belowSubview: mynaviBar)
         basevctableview?.showsVerticalScrollIndicator=false
-        basevctableview?.contentInsetAdjustmentBehavior = .automatic
-        basevctableview?.contentInset=UIEdgeInsets.init(top:mynaviBar.bounds.size.height ,
-                                                        left: 0,
-                                                        bottom:tabBarController?.tabBar.bounds.size.height ?? 0,
-                                                        right: 0)
+       
+//      basevctableview?.contentInset=UIEdgeInsets(top:mynaviBar.bounds.height+statusBar.bounds.height,
+//                                                left: 0, bottom:tabBarController?.tabBar.bounds.height ?? 49
+//      , right: 0)
+        
         basevctableview?.separatorStyle = .none
-        basevctableview?.estimatedRowHeight=300
+        basevctableview?.estimatedRowHeight=450
         
         refresh=UIRefreshControl()
         basevctableview?.addSubview(refresh!)
+       
         self.basevctableview?.reloadData()
         navbar.titleView=navibtn
     }

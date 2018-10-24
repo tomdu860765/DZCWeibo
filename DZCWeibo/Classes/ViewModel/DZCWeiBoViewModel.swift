@@ -9,7 +9,7 @@
 import Foundation
 import SDWebImage
 //最高微博刷新次数
-private let Max_count=5
+private let Max_count=3
 
 class WeiBoListArrayModel {
     //定义数组模型懒加载
@@ -31,6 +31,7 @@ class WeiBoListArrayModel {
             
             if  issuccess == false{
                 completion(false,false)
+                print("下啦刷新不成功")
                 return
             }
             var viewmodelarray = [DZCDetalisViewModel]()
@@ -44,13 +45,15 @@ class WeiBoListArrayModel {
                 viewmodelarray.append(DZCDetalisViewModel.init(model: modelview))
                 
             }
-          // print(viewmodelarray as Any)
+          
             if ispull{
-                self.listarray+=viewmodelarray
+                print("执行刷新")
+                self.listarray=viewmodelarray+self.listarray
+                
                 self.refrashcount+=1
             }else
             {
-                self.listarray=viewmodelarray+self.listarray
+                self.listarray+=viewmodelarray
                 self.refrashcount+=1
                 
             }
@@ -92,7 +95,7 @@ class WeiBoListArrayModel {
             })
             group.notify(queue: DispatchQueue.main) {
                 didfinish(true,true)
-                print("完成下载图片")
+                
             }
             
         }

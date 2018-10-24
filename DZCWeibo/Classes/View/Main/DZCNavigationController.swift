@@ -39,6 +39,8 @@ class DZCNavigationController: UINavigationController {
    
     @objc private func getback(){
         
+        print("返回游客视图")
+        
         popViewController(animated: true)
         
     }

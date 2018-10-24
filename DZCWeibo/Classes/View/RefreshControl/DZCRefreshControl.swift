@@ -7,7 +7,7 @@
 //
 
 import UIKit
-private let maxheight : CGFloat = 150
+private let maxheight : CGFloat = 88
 enum viewstatus{
     case normal
     case pulling
@@ -61,11 +61,11 @@ class DZCRefreshControl: UIControl {
             
             
             refreshview.status = .pulling
-           // print("开始刷新")
+           
         }else if height<=maxheight && refreshview.status == .pulling{
             
             refreshview.status = .normal
-           // print("继续拉就刷新")
+           
         }else{
             if refreshview.status == .pulling{
                 benginrefresh()

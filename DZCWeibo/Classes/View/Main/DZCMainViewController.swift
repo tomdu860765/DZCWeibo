@@ -30,23 +30,17 @@ class DZCMainViewController: UITabBarController {
     
 
     @objc private func showvc(){
-        DZCNetWorkManager.DefaultNetWork.account.access_token = "过期"
-        print("我是添加微博")
+        let  writewb = DZCWriteWeiboView.writeweibo()
+        
+        writewb.show()
         
     }
     ///makr token过期提醒栏
     @objc private func showalertvc(){
-//        let alertvc=UIAlertController.init(title: "警告", message: "你的账户已过期,请按“确认”重新登录", preferredStyle: .alert)
-//        let webvc = UINavigationController.init(rootViewController: DZCWebView())
-//        let alertvcaction = UIAlertAction.init(title: "确认", style: .default) { (UIAlertAction) in
-//
-//            self.present(webvc, animated: true, completion: nil)
-//            print("完成推送")
-//        }
-//        alertvc.addAction(alertvcaction)
-       // self.present(alertvc, animated:true, completion: nil)
+
         SVProgressHUD.showInfo(withStatus: "你的账户已经过期,请重新登录")
         SVProgressHUD.dismiss(withDelay: 1) {
+            
             let webvc = UINavigationController.init(rootViewController: DZCWebView())
             self.present(webvc, animated: true, completion: nil)
         }
@@ -58,7 +52,7 @@ class DZCMainViewController: UITabBarController {
     
     @objc private func loginshowtableview(){
         
-        //print(NSNotification.Name.self)
+        
         let webvc = UINavigationController.init(rootViewController: DZCWebView())
       
         
@@ -87,8 +81,14 @@ extension DZCMainViewController:UITabBarControllerDelegate{
             print("点击首页")
             let navvc = viewControllers?.first as! UINavigationController
             let vc = navvc.viewControllers.first as! DZCHomeViewController
-            vc.basevctableview?.setContentOffset(CGPoint.init(x: 0, y:-(navvc.navigationBar.frame.origin.y) ), animated: true)
-         
+            vc.basevctableview?.setContentOffset(CGPoint(x: 0, y:-64 ), animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
+                vc.basevctableview?.reloadData()
+            })
+                
+            
+            
         }
         
        return !viewController.isMember(of: UIViewController.self)

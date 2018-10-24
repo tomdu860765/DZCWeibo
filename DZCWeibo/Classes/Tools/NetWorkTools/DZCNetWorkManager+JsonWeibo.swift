@@ -52,7 +52,7 @@ extension DZCNetWorkManager{
                 
                 //保存模型
                 self.account.saveaccount()
-               // print(self.account)
+               
                   completion(issuccess)
                 
             })

@@ -18,27 +18,20 @@ class DZCHomeViewController: DZCBaseViewController {
         refresh?.addTarget(self, action: #selector(loadinfo), for: .valueChanged)
         basevctableview?.dataSource=self
         basevctableview?.delegate=self
-        
-        self.viwemodel.loadarray(ispull: true) { (issuccess,refreashcount)  in
-                self.refresh?.endRefreshing()
-                self.isrefresh=false
-            //异步回调到主现程刷新界面要使用EXECUTE:
-           
-            DispatchQueue.main.async(execute: {
-                self.basevctableview?.reloadData()
-            })
-            
-            }
+        loadinfo()
+
         
     }
     @objc private func loadinfo(){
-        refresh?.endRefreshing()
+        refresh?.beginRefreshing()
         viwemodel.loadarray(ispull: true) { (issuccess,refreashcount) in
-            self.refresh?.endRefreshing()
-           
-            self.basevctableview?.reloadData()
             
+            DispatchQueue.main.async(execute: {
+                self.basevctableview?.reloadData()
+            })
             self.isrefresh=false
+           self.refresh?.endRefreshing()
+            
         }
     }
     @objc private func frientsview(){
@@ -91,8 +84,8 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
             print("没有任何数据")
             return
         }
-        if row==(count-1) && isrefresh==false {
-            
+        if row==(count-1) && ispullup==false {
+            ispullup=true
             loadinfo()
         }
 
@@ -103,5 +96,5 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
        
         return modelarray.weibocellheight
     }
-    
+ 
 }
