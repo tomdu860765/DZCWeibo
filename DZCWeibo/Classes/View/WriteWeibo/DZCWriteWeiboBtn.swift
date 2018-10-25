@@ -14,7 +14,7 @@ class DZCWriteWeiboBtn: UIControl {
     
     @IBOutlet weak var btnlabel: UILabel!
     
-    
+    var classname : String?
     class func creatbtn(imagename:String,title:String)->DZCWriteWeiboBtn{
         let btnview = UINib.init(nibName: "DZCWriteWeiboBtn", bundle: nil).instantiate(withOwner: nil, options: nil).last as! DZCWriteWeiboBtn
         

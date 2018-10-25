@@ -32,7 +32,9 @@ class DZCMainViewController: UITabBarController {
     @objc private func showvc(){
         let  writewb = DZCWriteWeiboView.writeweibo()
         
-        writewb.show()
+        writewb.show {classname in
+            print(classname)
+        }
         
     }
     ///makr token过期提醒栏

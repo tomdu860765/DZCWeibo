@@ -28,15 +28,18 @@
                                 <rect key="frame" x="0.0" y="597" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7P-y9-buY">
-                                        <rect key="frame" x="171.5" y="9" width="32" height="32"/>
+                                        <rect key="frame" x="169.5" y="9" width="36" height="32"/>
                                         <state key="normal" backgroundImage="compose_guide_icon_close_check"/>
                                         <connections>
                                             <action selector="getback:" destination="YNS-AK-5r3" eventType="touchUpInside" id="MMH-cZ-oEE"/>
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdt-T8-UfI">
-                                        <rect key="frame" x="171.5" y="9" width="32" height="32"/>
-                                        <state key="normal" backgroundImage="compose_guide_check_box_right"/>
+                                        <rect key="frame" x="169.5" y="9" width="36" height="32"/>
+                                        <state key="normal" backgroundImage="compose_emotion_delete_highlighted"/>
+                                        <connections>
+                                            <action selector="finishanback:" destination="YNS-AK-5r3" eventType="touchUpInside" id="oRC-Xr-aMv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,7 +95,7 @@
         </view>
     </objects>
     <resources>
-        <image name="compose_guide_check_box_right" width="32" height="32"/>
+        <image name="compose_emotion_delete_highlighted" width="36" height="32"/>
         <image name="compose_guide_icon_close_check" width="32" height="32"/>
         <image name="compose_slogan" width="154" height="48"/>
     </resources>
