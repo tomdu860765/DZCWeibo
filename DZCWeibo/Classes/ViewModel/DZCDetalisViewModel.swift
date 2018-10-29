@@ -30,9 +30,11 @@ class DZCDetalisViewModel:CustomStringConvertible {
         
         return weibomodel.retweeted_status?.pic_urls  ?? weibomodel.pic_urls
     }
-    var retweetedtext :String?
+    var retweetedtext : NSAttributedString?
     //计算行高
     var weibocellheight : CGFloat=0
+    
+    var textattiment : NSAttributedString?
     
     
     init(model:DZCWeiboModel) {
@@ -72,7 +74,11 @@ class DZCDetalisViewModel:CustomStringConvertible {
         
         picsize=piccountsize(piccount: imageurls?.count ?? 0)
         
-        retweetedtext = "@" + (weibomodel.user?.screen_name ?? " ") + (weibomodel.retweeted_status?.text ?? " ")
+        let reposttext = "@" + (weibomodel.user?.screen_name ?? " ") + (weibomodel.retweeted_status?.text ?? " ")
+        
+        textattiment = DZCEmoticons.DefualtManger.emtionString(string: weibomodel.text ?? " " , font: UIFont.systemFont(ofSize: 15))
+
+        retweetedtext = DZCEmoticons.DefualtManger.emtionString(string: reposttext, font: UIFont.systemFont(ofSize: 14))
         
         
         updataheight()
@@ -121,21 +127,22 @@ class DZCDetalisViewModel:CustomStringConvertible {
         let viewsize = CGSize.init(width: screenbounds.width-2*margin, height:CGFloat(MAXFLOAT))
         
         //微博文本大小
-        if let text=weibomodel.text {
-        
-        height += (text as NSString).boundingRect(with: viewsize, options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                              attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15)],
-                                    context: nil).height
+        if let text=textattiment {
+   
+            
+            height +=  text.boundingRect(with: viewsize, options:  NSStringDrawingOptions.usesLineFragmentOrigin, context: nil).height
+            
             
         }
         //转发微博高度
         if  weibomodel.retweeted_status != nil{
             
             height += 2*margin
-            if let text = weibomodel.retweeted_status?.text{
-            height += (text as NSString).boundingRect(with: viewsize, options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                                                           attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)],
-                                                                           context: nil).height}
+            if let text = retweetedtext{
+          
+                
+          height += text.boundingRect(with: viewsize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil).height
+                
         }
         //加上图片高度
         height += picsize.height
@@ -145,6 +152,9 @@ class DZCDetalisViewModel:CustomStringConvertible {
         height += toolbarheight
         
         weibocellheight = height
+            
+    }
+ 
     }
     
     func updatapic(pic:UIImage){
@@ -156,7 +166,4 @@ class DZCDetalisViewModel:CustomStringConvertible {
         updataheight()
     }
     
-
 }
-
-

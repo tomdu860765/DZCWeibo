@@ -6,10 +6,16 @@
 //  Copyright © 2018 tomdu. All rights reserved.
 
 import UIKit
+//定义使用代理
+@objc protocol TextAttristringDelegate:NSObjectProtocol{
+    
+    @objc  optional func DZCweiboTextAttristringCell(cell:DZCWeiboTableViewCell,urlstring:String)
+    
+}
 
 class DZCWeiboTableViewCell: UITableViewCell {
-    
-    
+    //定义代理属性
+    weak var delegate : TextAttristringDelegate?
     //模型赋值给控件
     var viewmodel : DZCDetalisViewModel?{
         
@@ -17,18 +23,16 @@ class DZCWeiboTableViewCell: UITableViewCell {
             //用户名
             usernamelabel.text=viewmodel?.weibomodel.user?.screen_name
             //显示文本
-            textlabel.text=viewmodel?.weibomodel.text
+            textlabel.attributedText=viewmodel?.textattiment
             //vip头像
             vipimage.image=viewmodel?.vipimage
             //头像
-            headimage?.imageview(urlstring: viewmodel?.weibomodel.user?.profile_image_url ?? " ",
+           headimage.imageview(urlstring: viewmodel?.weibomodel.user?.profile_image_url ?? " ",
                                  iamge: UIImage.init(named:"avatar_default_big"), issuccess: true)
-            let str = viewmodel?.weibomodel.source
-            //微博来源
-            sourcelabel.text? = (str?.stringcunt(strsource: str!, fromword: ">", endword: "<"))!
+           //微博来源
+            sourcelabel.text = viewmodel?.weibomodel.source?.regstring()
             //底部按钮
             repostsbtn.setTitle(viewmodel?.recount, for:.normal)
-            
 
             commentsbtn.setTitle(viewmodel?.comcount, for: .normal)
             
@@ -42,7 +46,7 @@ class DZCWeiboTableViewCell: UITableViewCell {
             //vip等级标记
             vipicon.image=viewmodel?.vipicon
             
-            repostlabel?.text=viewmodel?.retweetedtext
+            repostlabel?.attributedText=viewmodel?.retweetedtext
             
         }
         
@@ -66,7 +70,7 @@ class DZCWeiboTableViewCell: UITableViewCell {
     @IBOutlet weak var timelabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.layer.drawsAsynchronously = true
         
     }
     

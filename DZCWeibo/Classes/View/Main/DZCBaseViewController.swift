@@ -62,6 +62,7 @@ class DZCBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //添加观察者响应,并执行方法
         NotificationCenter.default.addObserver(self, selector: #selector(signinsuccess),
                                                name:NSNotification.Name(rawValue: UserSigninNotification) , object: nil)
          basevctableview?.contentInsetAdjustmentBehavior  = .automatic

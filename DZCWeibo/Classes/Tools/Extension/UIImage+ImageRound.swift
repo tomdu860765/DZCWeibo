@@ -33,13 +33,15 @@ extension UIImage{
         path.lineWidth=2
         path.stroke()
         
-        let result = UIGraphicsGetImageFromCurrentImageContext()
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else {
+            return  UIImage(named:"avatar_default_big")!
+        }
 
         
         UIGraphicsEndImageContext()
       
         
-        return result!
+        return result
     }
     
     

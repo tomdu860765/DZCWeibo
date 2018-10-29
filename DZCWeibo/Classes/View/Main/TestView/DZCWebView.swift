@@ -99,6 +99,7 @@ extension DZCWebView:WKNavigationDelegate{
                     SVProgressHUD.showInfo(withStatus:"网络加载成功")
                     
                     self.backhomevc()
+                    //通知basevc完成加载数据
                     NotificationCenter.default.post(
                         name:NSNotification.Name(rawValue: UserSigninNotification),
                          object: nil,
