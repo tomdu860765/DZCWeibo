@@ -71,7 +71,7 @@ class DZCWeiboTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.drawsAsynchronously = true
-        
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     

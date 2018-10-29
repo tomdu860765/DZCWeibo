@@ -19,7 +19,7 @@ extension UIImageView{
                     options: []) { (image, _, _, _) in
                         
                         if issuccess==true{
-                        self.image = image?.ImageRoundCut(size:self.bounds.size)
+                        self.image = image?.ImageRoundCut(size:self.frame.size)
                             
                         }
       

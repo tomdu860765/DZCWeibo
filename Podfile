@@ -12,6 +12,6 @@ target 'DZCWeibo' do
    pod 'SVProgressHUD'
    pod 'pop'
    pod 'SnapKit'
-
+   pod 'FFLabel'
 
 end
