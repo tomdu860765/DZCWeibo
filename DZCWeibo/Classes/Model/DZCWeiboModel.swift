@@ -12,11 +12,15 @@ import YYModel
 class DZCWeiboModel: NSObject {
 
     var id : Int64=0
-    
+    //微博正文
     var text:String?
+        
     
     //消息来源
     var source : String?
+       
+   
+    
     //user返回模型
     var user : DZCWeiboDetailsModel?
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2201728021650C500055B48A /* DZCNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201727F21650C500055B48A /* DZCNetWorkManager.swift */; };
 		22017282216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22017281216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift */; };
+		22226CD22182FFB5000A08D9 /* String+Regular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22226CD12182FFB5000A08D9 /* String+Regular.swift */; };
 		222AECB52172BC1900F871F7 /* DZCPicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222AECB42172BC1900F871F7 /* DZCPicModel.swift */; };
 		222AECB72172C20300F871F7 /* DZCWeiboPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */; };
 		2262199F217CADED00195470 /* DZCWriteWeiboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262199E217CADED00195470 /* DZCWriteWeiboView.swift */; };
@@ -35,6 +36,7 @@
 		2299F81121718596009DD2A6 /* UIImage+ImageRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2299F81021718596009DD2A6 /* UIImage+ImageRound.swift */; };
 		229F5C2F216F22FD00C8A99F /* DZCWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229F5C2E216F22FD00C8A99F /* DZCWelcomeViewController.swift */; };
 		229F5C31216F257F00C8A99F /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229F5C30216F257F00C8A99F /* WelcomeView.storyboard */; };
+		22ACAE212187228200255699 /* DZCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ACAE202187228200255699 /* DZCLabel.swift */; };
 		22B7D1D1216876D2004C4E07 /* UserNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D0216876D2004C4E07 /* UserNotify.swift */; };
 		22B7D1D32168C13E004C4E07 /* DZCWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D22168C13E004C4E07 /* DZCWebView.swift */; };
 		22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63462165B5CE000536AF /* DZCWeiboModel.swift */; };
@@ -50,12 +52,17 @@
 		22D9055F2170E717002A1D9A /* DZCDetalisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9055E2170E717002A1D9A /* DZCDetalisViewModel.swift */; };
 		22DE3DAF2160EBD0007003E7 /* DZCVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE3DAE2160EBD0007003E7 /* DZCVistorView.swift */; };
 		22DE4156216A530F00070017 /* DZCAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE4155216A530F00070017 /* DZCAccountModel.swift */; };
+		22E4DC6C2185EFD50030E66D /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22E4DC6B2185EFD40030E66D /* Emoticons.bundle */; };
+		22E4DC6F2185F00F0030E66D /* DZCEmoticons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E4DC6E2185F00F0030E66D /* DZCEmoticons.swift */; };
+		22E4DC712185F0140030E66D /* DZCEmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E4DC702185F0140030E66D /* DZCEmotionModel.swift */; };
+		22E4DC732185F0190030E66D /* DZCEmotionCoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E4DC722185F0190030E66D /* DZCEmotionCoinModel.swift */; };
 		A69508BBB7C19F7E7A0CF421 /* Pods_DZCWeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D96F52BF93E8D206C28783A /* Pods_DZCWeibo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2201727F21650C500055B48A /* DZCNetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCNetWorkManager.swift; sourceTree = "<group>"; };
 		22017281216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DZCNetWorkManager+JsonWeibo.swift"; sourceTree = "<group>"; };
+		22226CD12182FFB5000A08D9 /* String+Regular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Regular.swift"; sourceTree = "<group>"; };
 		222AECB42172BC1900F871F7 /* DZCPicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCPicModel.swift; sourceTree = "<group>"; };
 		222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboPicView.swift; sourceTree = "<group>"; };
 		2262199E217CADED00195470 /* DZCWriteWeiboView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWriteWeiboView.swift; sourceTree = "<group>"; };
@@ -84,6 +91,7 @@
 		2299F81021718596009DD2A6 /* UIImage+ImageRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageRound.swift"; sourceTree = "<group>"; };
 		229F5C2E216F22FD00C8A99F /* DZCWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWelcomeViewController.swift; sourceTree = "<group>"; };
 		229F5C30216F257F00C8A99F /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
+		22ACAE202187228200255699 /* DZCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCLabel.swift; sourceTree = "<group>"; };
 		22B7D1D0216876D2004C4E07 /* UserNotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotify.swift; sourceTree = "<group>"; };
 		22B7D1D22168C13E004C4E07 /* DZCWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWebView.swift; sourceTree = "<group>"; };
 		22CA63462165B5CE000536AF /* DZCWeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboModel.swift; sourceTree = "<group>"; };
@@ -99,6 +107,10 @@
 		22D9055E2170E717002A1D9A /* DZCDetalisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCDetalisViewModel.swift; sourceTree = "<group>"; };
 		22DE3DAE2160EBD0007003E7 /* DZCVistorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCVistorView.swift; sourceTree = "<group>"; };
 		22DE4155216A530F00070017 /* DZCAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCAccountModel.swift; sourceTree = "<group>"; };
+		22E4DC6B2185EFD40030E66D /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		22E4DC6E2185F00F0030E66D /* DZCEmoticons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DZCEmoticons.swift; sourceTree = "<group>"; };
+		22E4DC702185F0140030E66D /* DZCEmotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DZCEmotionModel.swift; sourceTree = "<group>"; };
+		22E4DC722185F0190030E66D /* DZCEmotionCoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DZCEmotionCoinModel.swift; sourceTree = "<group>"; };
 		4D96F52BF93E8D206C28783A /* Pods_DZCWeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DZCWeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE53C13DCD0946B6E0DE1E0E /* Pods-DZCWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZCWeibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DZCWeibo/Pods-DZCWeibo.release.xcconfig"; sourceTree = "<group>"; };
 		DE871C28D444CF3CDD6609C0 /* Pods-DZCWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DZCWeibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DZCWeibo/Pods-DZCWeibo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 				226F681E215BC69D00F26441 /* Classes */,
 				226F680C215BC12D00F26441 /* AppDelegate.swift */,
 				226F6813215BC13100F26441 /* Assets.xcassets */,
+				22E4DC6B2185EFD40030E66D /* Emoticons.bundle */,
 				226F6815215BC13100F26441 /* LaunchScreen.storyboard */,
 				226F510A2161A4D9006E1DC6 /* BaseView.json */,
 				226F6818215BC13100F26441 /* Info.plist */,
@@ -171,6 +184,7 @@
 		226F681E215BC69D00F26441 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				22E4DC6D2185F0070030E66D /* Emotion */,
 				22B7D1CF216876B4004C4E07 /* UserNotify */,
 				226F681F215BC69D00F26441 /* Model */,
 				226F6820215BC69D00F26441 /* Tools */,
@@ -295,6 +309,8 @@
 				22D00893215DCC72003C771A /* UIBarButtonItem+Custom.swift */,
 				226A7ACB215F0C760048ADCA /* UIButton+Image.swift */,
 				227662A62172364D00735ED8 /* String+CutweiboString.swift */,
+				22226CD12182FFB5000A08D9 /* String+Regular.swift */,
+				22ACAE202187228200255699 /* DZCLabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,6 +360,16 @@
 				222AECB62172C20300F871F7 /* DZCWeiboPicView.swift */,
 			);
 			path = DZCWeiboCell;
+			sourceTree = "<group>";
+		};
+		22E4DC6D2185F0070030E66D /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				22E4DC6E2185F00F0030E66D /* DZCEmoticons.swift */,
+				22E4DC702185F0140030E66D /* DZCEmotionModel.swift */,
+				22E4DC722185F0190030E66D /* DZCEmotionCoinModel.swift */,
+			);
+			path = Emotion;
 			sourceTree = "<group>";
 		};
 		6E1432AAA72DA84942C57943 /* Pods */ = {
@@ -433,6 +459,7 @@
 				22CE78D0217B599200BCA518 /* DZCRefreshControl.xib in Resources */,
 				22857DFC216C537C004AA2EF /* Assets.xcassets in Resources */,
 				226F510B2161A4D9006E1DC6 /* BaseView.json in Resources */,
+				22E4DC6C2185EFD50030E66D /* Emoticons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E4DC712185F0140030E66D /* DZCEmotionModel.swift in Sources */,
 				226F510C2161A525006E1DC6 /* BaseView.json in Sources */,
 				226219A3217CBBDF00195470 /* DZCWriteWeiboBtn.swift in Sources */,
 				22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */,
@@ -515,15 +543,19 @@
 				226F680D215BC12D00F26441 /* AppDelegate.swift in Sources */,
 				22D00894215DCC72003C771A /* UIBarButtonItem+Custom.swift in Sources */,
 				22CE78C7217AD5F400BCA518 /* DZCRefreshControl.swift in Sources */,
+				22E4DC732185F0190030E66D /* DZCEmotionCoinModel.swift in Sources */,
 				22921EF7215BF09900B947EB /* UIImage+URLImage.swift in Sources */,
 				22DE3DAF2160EBD0007003E7 /* DZCVistorView.swift in Sources */,
+				22E4DC6F2185F00F0030E66D /* DZCEmoticons.swift in Sources */,
 				226F6837215BC8A500F26441 /* DZCMyinfoViewController.swift in Sources */,
 				2201728021650C500055B48A /* DZCNetWorkManager.swift in Sources */,
 				226F682F215BC80900F26441 /* DZCBaseViewController.swift in Sources */,
 				22017282216521730055B48A /* DZCNetWorkManager+JsonWeibo.swift in Sources */,
+				22226CD22182FFB5000A08D9 /* String+Regular.swift in Sources */,
 				222AECB72172C20300F871F7 /* DZCWeiboPicView.swift in Sources */,
 				22D9055F2170E717002A1D9A /* DZCDetalisViewModel.swift in Sources */,
 				227662A72172364D00735ED8 /* String+CutweiboString.swift in Sources */,
+				22ACAE212187228200255699 /* DZCLabel.swift in Sources */,
 				22DE4156216A530F00070017 /* DZCAccountModel.swift in Sources */,
 				22D9055A21709AD8002A1D9A /* DZCWeiboTableViewCell.swift in Sources */,
 				222AECB52172BC1900F871F7 /* DZCPicModel.swift in Sources */,
