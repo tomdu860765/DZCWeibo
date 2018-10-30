@@ -6,11 +6,12 @@
 //  Copyright © 2018 tomdu. All rights reserved.
 
 import UIKit
+import FFLabel
 //定义使用代理
 @objc protocol TextAttristringDelegate:NSObjectProtocol{
-    
-    @objc  optional func DZCweiboTextAttristringCell(cell:DZCWeiboTableViewCell,urlstring:String)
-    
+
+@objc  optional  func DZCweiboTextAttristringCell(cell:DZCWeiboTableViewCell,urlstring:String)
+
 }
 
 class DZCWeiboTableViewCell: UITableViewCell {
@@ -52,7 +53,7 @@ class DZCWeiboTableViewCell: UITableViewCell {
         
         
     }
-    @IBOutlet weak var repostlabel: UILabel?
+    @IBOutlet weak var repostlabel: FFLabel?
     @IBOutlet weak var vipicon: UIImageView!
     @IBOutlet weak var imageview: DZCWeiboPicView!
     @IBOutlet weak var repostsbtn: UIButton!
@@ -63,7 +64,7 @@ class DZCWeiboTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var attitudesbtn: UIButton!
-    @IBOutlet weak var textlabel: UILabel!
+    @IBOutlet weak var textlabel: FFLabel!
     @IBOutlet weak var headimage: UIImageView!
     @IBOutlet weak var usernamelabel: UILabel!
     @IBOutlet weak var sourcelabel: UILabel!
@@ -72,6 +73,8 @@ class DZCWeiboTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.layer.drawsAsynchronously = true
         translatesAutoresizingMaskIntoConstraints = false
+        repostlabel?.labelDelegate = self
+        textlabel.labelDelegate = self
     }
     
     
@@ -82,5 +85,21 @@ class DZCWeiboTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
+    
+}
+extension DZCWeiboTableViewCell:FFLabelDelegate{
+    
+    func labelDidSelectedLinkText(label: FFLabel, text: String) {
+        
+        if !text.hasPrefix("http://") {
+           
+            return
+        }
+       
+        delegate?.DZCweiboTextAttristringCell?(cell: self, urlstring: text)
+       
+    }
+   
+    
     
 }

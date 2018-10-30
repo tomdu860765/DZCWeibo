@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DZCHomeViewController: DZCBaseViewController {
+class DZCHomeViewController: DZCBaseViewController,TextAttristringDelegate {
     private lazy var viwemodel = WeiBoListArrayModel()
     
       override func viewDidLoad() {
@@ -71,7 +71,7 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier:cellid , for: indexPath) as! DZCWeiboTableViewCell
         cell.viewmodel=viwemodel.listarray[indexPath.row]
-        
+        cell.delegate = self
        
         return cell
     }
@@ -97,4 +97,18 @@ extension  DZCHomeViewController:UITableViewDataSource,UITableViewDelegate{
         return modelarray.weibocellheight
     }
  
+}
+extension DZCHomeViewController{
+    
+    
+    func  DZCweiboTextAttristringCell(cell: DZCWeiboTableViewCell, urlstring: String) {
+       
+        let webvc=DZCWebViewController()
+        webvc.urlstring = urlstring
+        
+        navigationController?.pushViewController(webvc, animated: true)
+        
+    }
+    
+    
 }

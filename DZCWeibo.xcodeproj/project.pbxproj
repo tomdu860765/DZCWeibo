@@ -39,6 +39,7 @@
 		22ACAE212187228200255699 /* DZCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ACAE202187228200255699 /* DZCLabel.swift */; };
 		22B7D1D1216876D2004C4E07 /* UserNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D0216876D2004C4E07 /* UserNotify.swift */; };
 		22B7D1D32168C13E004C4E07 /* DZCWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D1D22168C13E004C4E07 /* DZCWebView.swift */; };
+		22B8D9D921887F0A00DDFCA9 /* DZCWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B8D9D821887F0A00DDFCA9 /* DZCWebViewController.swift */; };
 		22CA63472165B5CE000536AF /* DZCWeiboModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63462165B5CE000536AF /* DZCWeiboModel.swift */; };
 		22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */; };
 		22CE78C7217AD5F400BCA518 /* DZCRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CE78C6217AD5F400BCA518 /* DZCRefreshControl.swift */; };
@@ -94,6 +95,7 @@
 		22ACAE202187228200255699 /* DZCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCLabel.swift; sourceTree = "<group>"; };
 		22B7D1D0216876D2004C4E07 /* UserNotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotify.swift; sourceTree = "<group>"; };
 		22B7D1D22168C13E004C4E07 /* DZCWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWebView.swift; sourceTree = "<group>"; };
+		22B8D9D821887F0A00DDFCA9 /* DZCWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWebViewController.swift; sourceTree = "<group>"; };
 		22CA63462165B5CE000536AF /* DZCWeiboModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiboModel.swift; sourceTree = "<group>"; };
 		22CA63482165B777000536AF /* DZCWeiBoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCWeiBoViewModel.swift; sourceTree = "<group>"; };
 		22CE78C6217AD5F400BCA518 /* DZCRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZCRefreshControl.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				226F6832215BC88000F26441 /* DZCHomeViewController.swift */,
+				22B8D9D821887F0A00DDFCA9 /* DZCWebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -495,6 +499,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +539,7 @@
 				22E4DC712185F0140030E66D /* DZCEmotionModel.swift in Sources */,
 				226F510C2161A525006E1DC6 /* BaseView.json in Sources */,
 				226219A3217CBBDF00195470 /* DZCWriteWeiboBtn.swift in Sources */,
+				22B8D9D921887F0A00DDFCA9 /* DZCWebViewController.swift in Sources */,
 				22CA63492165B777000536AF /* DZCWeiBoViewModel.swift in Sources */,
 				22857E01216CEFD0004AA2EF /* DZCCollectionViewController.swift in Sources */,
 				226F6833215BC88000F26441 /* DZCHomeViewController.swift in Sources */,

@@ -13,5 +13,6 @@ target 'DZCWeibo' do
    pod 'pop'
    pod 'SnapKit'
    pod 'FFLabel'
+   pod 'YYText'
 
 end

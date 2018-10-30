@@ -98,6 +98,7 @@ class DZCBaseViewController: UIViewController {
         
         didSet {
             navbar.title=title
+    
         }
     }
     //设置访客视图
