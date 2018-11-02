@@ -281,7 +281,7 @@ private extension DZCWriteWeiboView{
                         return
                     }
                     self.completionblock?(classname)
-                    
+                    self.removeFromSuperview()
                 }
                 
             }

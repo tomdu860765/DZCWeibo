@@ -34,6 +34,18 @@ class DZCMainViewController: UITabBarController {
         
         writewb.show {classname in
             print(classname)
+            let vcstr = bundleNamestring + "."+classname
+            
+            guard   let composevc = NSClassFromString(vcstr) as? UIViewController.Type else{
+                return
+            }
+            
+            let vc = composevc.init()
+            let navc = UINavigationController.init(rootViewController: vc)
+            
+            self.present(navc, animated: true, completion: nil)
+        
+ 
         }
         
     }
@@ -44,6 +56,7 @@ class DZCMainViewController: UITabBarController {
         SVProgressHUD.dismiss(withDelay: 1) {
             
             let webvc = UINavigationController.init(rootViewController: DZCWebView())
+            
             self.present(webvc, animated: true, completion: nil)
         }
        
@@ -148,7 +161,7 @@ extension DZCMainViewController{
     
     private func subsVC(dict:[String:Any])->UIViewController{
         //根据字典名称创建控制器
-        let str = Bundle.main.infoDictionary?["CFBundleName"]as? String ?? ""
+        let str = bundleNamestring
         
         guard let clsname=dict["classVC"]as?String,
             let title=dict["title"]as?String,

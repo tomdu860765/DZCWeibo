@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension DZCNetWorkManager{
     
     ///max_id:返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0
@@ -76,6 +77,28 @@ extension DZCNetWorkManager{
         }
         
     }
+    //发布微博请求处理
+    func postweibonetwork(text:String,image:UIImage?,completion:@escaping (([String:AnyObject],Bool)->()))  {
+       let urlstr="https://api.weibo.com/2/statuses/share.json"
+        
+        let prmas = ["status":text,"access_token":account.access_token]
+        
+        
+        if image != nil {
+            let name : String? = "pic"
+            let data : Data? = image!.pngData()
+            tokenrequest(Method: NetWorkWays.POST, URLString: urlstr, Token: prmas as [String : Any], name: name, data: data) { (json, issuccess) in
+                completion(json as! [String : AnyObject], issuccess)
+            }
+        }else{
+            
+            tokenrequest(Method: NetWorkWays.POST, URLString: urlstr, Token: prmas as [String : Any]) { (json, issuccess) in
+                completion(json as! [String : AnyObject], issuccess)
+            }
+            
+        }
+        
 
+    }
 
 }

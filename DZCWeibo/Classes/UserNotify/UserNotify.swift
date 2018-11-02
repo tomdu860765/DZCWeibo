@@ -30,6 +30,8 @@ let screenbounds = UIScreen.main.bounds
 let isheadscreen = true
 //当前机型
 let devicesnum = UIDevice.current.model
+//命名空间
+let bundleNamestring = Bundle.main.infoDictionary?["CFBundleName"] as! String
 
 
 //外部间距

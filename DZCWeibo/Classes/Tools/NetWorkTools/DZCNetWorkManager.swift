@@ -24,7 +24,7 @@ class DZCNetWorkManager: AFHTTPSessionManager {
    
     
    //处理token的方法
-    func tokenrequest(Method:NetWorkWays,URLString:String,Token:[String:Any]?,Completion:@escaping (AnyObject?,Bool)->())  {
+    func tokenrequest(Method:NetWorkWays,URLString:String,Token:[String:Any]?,name:String?=nil,data:Data?=nil, Completion:@escaping (AnyObject?,Bool)->())  {
         
         guard let weibotoken=account.access_token else {
             print("请用账号登陆")
@@ -40,10 +40,42 @@ class DZCNetWorkManager: AFHTTPSessionManager {
         }
         //拼接字典
         Token?["access_token"]=weibotoken
+        if let name=name,
+            let data=data
+         {
+            uploadweibo(URLString: URLString, TokenDict: Token!, data: data, name: name, Completion: Completion)
+        }else{
+            //fix的网络方法修改
+            NetWeiboHomeInfo(Method:.GET,URLString: URLString, Token: Token!, Completion:Completion)
+        }
+  
+    }
+    
+    //上传微博方法
+    func uploadweibo(URLString:String,TokenDict:[String:Any]?,data:Data,name:String,Completion:@escaping (AnyObject?,Bool)->())   {
+        
+        
+        post(URLString, parameters: TokenDict, constructingBodyWith: { (AFMultipartFormData) in
+            AFMultipartFormData.appendPart(withFileData: data, name: name, fileName: "picname", mimeType: "application/octet-stream")
+        }, progress: nil, success: { (_, json) in
+          //成功回调
+            Completion(json as AnyObject,true)
+        }) { (tasks:URLSessionDataTask?,error:Error) in
+            //失败回调
+            if ( tasks?.response as? HTTPURLResponse)?.statusCode==403 {
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserExtimeNotification),
+                                                object: nil, userInfo: nil)
+                print("账户过期请重新登录")
+            }
+            print("网络请求失败\(error)")
+            Completion(error as AnyObject,false)
+        }
         
         
         
-        NetWeiboHomeInfo(Method:.GET,URLString: URLString, Token: Token!, Completion:Completion)
+        
+        
     }
     
     
